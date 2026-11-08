@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/License-CC--BY%204.0-blue.svg?style=for-the-badge)](LICENSE)
 [![LangChain](https://img.shields.io/badge/Agentes-LangChain%201.4-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://docs.langchain.com/)
 [![LangGraph](https://img.shields.io/badge/Runtime-LangGraph-1C3C3C?style=for-the-badge)](https://docs.langchain.com/oss/python/langgraph/overview)
+[![Gemini](https://img.shields.io/badge/Modelo-Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
 Este repositorio contiene el material oficial del curso **Py501 · Aplicaciones Agénticas Profesionales con LangChain** de **Pythonista®**, impartido por José Luis Chiquete. El curso enseña a diseñar, controlar, evaluar y operar agentes de IA con el ecosistema *LangChain* 1.x: herramientas, RAG, MCP, *middleware*, *LangGraph*, memoria, *Deep Agents*, evaluación, seguridad y despliegue.
 
@@ -34,6 +35,12 @@ Un curso de **8 sesiones en vivo de 2 horas** (16 horas) sobre *notebooks* de *J
 * **Diseñar flujos con *LangGraph*:** estado, ejecución durable, interrupciones y patrones multiagente.
 * **Dar memoria a los agentes:** memoria por hilo y por usuario, y agentes profundos para tareas largas.
 * **Llevar un agente a producción:** evaluación de respuesta y trayectoria, observabilidad, seguridad, costos y despliegue.
+
+### 🤖 Modelo del curso: Gemini
+
+**En este curso se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.5-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos y probados con esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
+
+El código **no depende de Gemini**: *LangChain* usa la misma interfaz para cualquier proveedor y basta cambiar la cadena `"proveedor:modelo"` (el *notebook* `03` lo demuestra con *OpenAI* y *Anthropic*). Usamos un solo modelo para que todo el grupo vea el mismo comportamiento y compare resultados en igualdad de condiciones. Para cambiarlo en todo el curso, define las variables de entorno `MODELO` y `EMBEDDINGS`.
 
 A lo largo del curso se construye un mismo sistema: el **asistente de soporte interno** de *Andina Logística*, una empresa ficticia, que consulta políticas, gestiona tickets por MCP y escala casos a una persona.
 
@@ -81,7 +88,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 - [15_demo_final_integradora.ipynb](15_demo_final_integradora.ipynb)
 
 #### 🔹 Módulo 1: Fundamentos de sistemas agénticos
-* `01` - Bienvenida, reglas del curso, claves de API como secretos de *Codespaces* y verificación del entorno.
+* `01` - Bienvenida, reglas del curso, modelo del curso (*Gemini*), claves de API como secretos de *Codespaces* y verificación del entorno.
 * `02` - Qué es un agente; el ciclo de razonar, actuar y observar construido a mano; niveles de autonomía; patrones (ReAct, planificar y ejecutar, reflexión, orquestador); modos de falla.
 
 #### 🔹 Módulo 2: El ecosistema *LangChain* v1
@@ -127,17 +134,19 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 
 ¡Olvídate de configurar entornos locales! Este repositorio está configurado para **GitHub Codespaces**.
 
-### 1. Claves de API
+### 1. Claves de API (antes de la primera sesión)
 
-Antes de crear el *Codespace*, agrega tus claves como **secretos de Codespaces** en **github.com/settings/codespaces** y dales acceso a este repositorio:
+📘 **Sigue el tutorial paso a paso: [`TUTORIAL_SECRETOS.md`](TUTORIAL_SECRETOS.md).** Explica cómo obtener cada clave, cómo guardarla como secreto de Codespaces, cómo verificarla sin mostrarla, los errores comunes y qué hacer si una clave se filtra.
 
 | Secreto | Obligatorio | Dónde se obtiene |
 | :--- | :--- | :--- |
-| `GOOGLE_API_KEY` | Sí (modelo por defecto: *Gemini*) | [Google AI Studio](https://ai.google.dev/gemini-api/docs/api-key) |
-| `LANGSMITH_API_KEY` | Recomendado (trazas y evaluación) | [smith.langchain.com](https://smith.langchain.com/) |
-| `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` | No (comparar modelos) | Consola de cada proveedor |
+| `GOOGLE_API_KEY` | **Sí** (*Gemini*, modelo del curso) | [Google AI Studio](https://aistudio.google.com/) → **API Keys** |
+| `LANGSMITH_API_KEY` | Recomendado (trazas y evaluación) | [smith.langchain.com](https://smith.langchain.com/) → **Settings → API Keys** |
+| `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` | No (solo para comparar modelos) | Consola de cada proveedor |
 
-> ⚠️ **Nunca** escribas una clave en un *notebook* ni en un archivo del repositorio: es público.
+En resumen: GitHub → **Settings → Codespaces → Codespaces secrets → New secret**, con el nombre exacto de la tabla y acceso a este repositorio (o a tu *fork*).
+
+> ⚠️ **Nunca** escribas una clave en un *notebook* ni en un archivo del repositorio: es público y el historial de Git la conservaría.
 
 ### 2. Crear el *Codespace*
 
@@ -153,9 +162,9 @@ El entorno se iniciará automáticamente con:
 
 > ⚠️ **ADVERTENCIA: el ecosistema cambia rápido.** El curso usa *LangChain* 1.4 y *LangGraph* 1.2. Los tutoriales anteriores a la versión 1.0 (octubre de 2025) usan `AgentExecutor`, `initialize_agent` o `create_react_agent`, que hoy son código heredado. `deepagents` aún no llega a la versión 1.0 y puede romper compatibilidad entre versiones menores. No actualices `requirements.txt` durante el curso.
 
-La primera vez tarda unos minutos porque instala las librerías. Después abre `01_bienvenida_y_entorno.ipynb`, elige el kernel **Python 3.12** (`/usr/local/bin/python`) en **Select Kernel** y ejecuta las celdas en orden con `Shift + Enter`.
+La primera vez tarda unos minutos porque instala las librerías. Si creaste los secretos con el *Codespace* ya abierto, detenlo y vuelve a abrirlo para que se carguen. Después abre `01_bienvenida_y_entorno.ipynb`, elige el kernel **Python 3.12** (`/usr/local/bin/python`) en **Select Kernel** y ejecuta las celdas en orden con `Shift + Enter`.
 
-> 💡 Cada ejecución llama a un modelo de lenguaje y consume tokens de tu clave. Codespaces se detiene solo tras un rato de inactividad; para no gastar tus horas gratuitas, detenlo al terminar: **github.com/codespaces** → `…` → **Stop codespace**.
+> 💡 Cada ejecución llama a *Gemini* y consume la cuota de tu `GOOGLE_API_KEY`; el nivel gratuito tiene límites por minuto y por día. Codespaces se detiene solo tras un rato de inactividad; para no gastar tus horas gratuitas, detenlo al terminar: **github.com/codespaces** → `…` → **Stop codespace**.
 
 ### Ejecución Local (Opcional)
 Si prefieres trabajar en tu máquina:
@@ -172,8 +181,8 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Configurar claves
-cp .env.example .env      # y completa los valores
+# Configurar claves (ver la sección 9 de TUTORIAL_SECRETOS.md)
+cp .env.example .env      # y completa GOOGLE_API_KEY
 
 # Iniciar Jupyter
 jupyter lab

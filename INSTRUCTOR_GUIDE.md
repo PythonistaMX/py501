@@ -8,6 +8,8 @@ Los *notebooks* se numeran por tema, en orden, a lo largo de todo el curso; cada
 
 Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `01` y `15` no tienen ejercicios ni soluciones.
 
+**Modelo del curso:** *Gemini* (`google_genai:gemini-3.5-flash` y `google_genai:gemini-embedding-001`). Todo el material está probado con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en la sesión 1: el código es portable, pero en clase todos usan *Gemini*.
+
 **Hilo conductor:** el asistente de soporte interno de *Andina Logística* (empresa ficticia). Las políticas están en `data/politicas/` y el servidor MCP de tickets en `mcp_servers/tickets_server.py`.
 
 **Proporción:** cerca de 60% teoría y casos de diseño, 30% laboratorios (`04`, `06`, `07`, `08`, `09`, `11`, `13`) y 10% demo final (`15`).
@@ -241,7 +243,7 @@ Al terminar, el participante podrá:
 
 ## Checklist previa a clase
 
-- Pedir a los alumnos, una semana antes, que creen sus claves (`GOOGLE_API_KEY`, `LANGSMITH_API_KEY`), las guarden como secretos de *Codespaces* y ejecuten `01_bienvenida_y_entorno`.
+- Enviar a los alumnos, una semana antes, el enlace a [`TUTORIAL_SECRETOS.md`](TUTORIAL_SECRETOS.md) y pedirles que creen `GOOGLE_API_KEY` y `LANGSMITH_API_KEY`, las guarden como secretos de *Codespaces* y ejecuten `01_bienvenida_y_entorno` completo.
 - Codespace creado desde `main` y dependencias instaladas (`postCreateCommand`).
 - Los *notebooks* de la sesión y sus versiones en `soluciones/` corren de principio a fin con una clave real (workflow `notebooks-smoke.yml` en verde, con los secretos del repositorio configurados).
 - Una clave de respaldo del instructor por si un alumno no puede usar la suya.
@@ -256,7 +258,7 @@ Al terminar, el participante podrá:
 
 ## Riesgos comunes y mitigación
 
-- **Claves que no aparecen en el *Codespace*:** el secreto no tiene acceso al repositorio o el *Codespace* no se recargó. Revisar en **github.com/settings/codespaces** y reconstruir.
+- **Claves que no aparecen en el *Codespace*:** el secreto no tiene acceso al repositorio (o al *fork* del alumno) o el *Codespace* se inició antes de crearlo. Ver la sección 7 de `TUTORIAL_SECRETOS.md`.
 - **Límites de la API (cuota o tasa):** las celdas están pensadas para pocas ejecuciones; usar un modelo pequeño (`MODELO=google_genai:gemini-3.5-flash`) y la clave de respaldo.
 - **Respuestas distintas a las del instructor:** es normal; se discute el comportamiento (herramientas, orden, argumentos), no el texto exacto.
 - **`asyncio.run()` en *Jupyter*:** falla porque ya hay un *event loop*; usar `await` directamente en la celda.
