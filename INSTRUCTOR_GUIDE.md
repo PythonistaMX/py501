@@ -2,11 +2,11 @@
 
 Guía operativa para impartir **Py501 · Aplicaciones Agénticas Profesionales con LangChain** con consistencia técnica y pedagógica. El material no fija fechas ni horarios para que sirva en cualquier edición.
 
-## Estructura (8 sesiones de 2 horas, 15 *notebooks*)
+## Estructura (8 sesiones de 2 horas, 16 *notebooks*)
 
 Los *notebooks* se numeran por tema, en orden, a lo largo de todo el curso; cada sesión abarca uno o varios, como indica la agenda de cada sesión más abajo.
 
-Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `01` y `15` no tienen ejercicios ni soluciones.
+Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `00`, `01` y `15` no tienen ejercicios ni soluciones. `00_claves_de_api_y_secretos.ipynb` es **pre-trabajo**: se resuelve antes de la sesión 1.
 
 **Modelo del curso:** *Gemini* (`google_genai:gemini-3.5-flash` y `google_genai:gemini-embedding-001`). Todo el material está probado con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en la sesión 1: el código es portable, pero en clase todos usan *Gemini*.
 
@@ -243,7 +243,7 @@ Al terminar, el participante podrá:
 
 ## Checklist previa a clase
 
-- Enviar a los alumnos, una semana antes, el enlace a [`TUTORIAL_SECRETOS.md`](TUTORIAL_SECRETOS.md) y pedirles que creen `GOOGLE_API_KEY` y `LANGSMITH_API_KEY`, las guarden como secretos de *Codespaces* y ejecuten `01_bienvenida_y_entorno` completo.
+- Enviar a los alumnos, una semana antes, el enlace al *notebook* [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb) y pedirles que creen `GOOGLE_API_KEY` y `LANGSMITH_API_KEY`, las guarden como secretos de *Codespaces* y ejecuten la sección 6 de `00_claves_de_api_y_secretos.ipynb` y `01_bienvenida_y_entorno` completo.
 - Codespace creado desde `main` y dependencias instaladas (`postCreateCommand`).
 - Los *notebooks* de la sesión y sus versiones en `soluciones/` corren de principio a fin con una clave real (workflow `notebooks-smoke.yml` en verde, con los secretos del repositorio configurados).
 - Una clave de respaldo del instructor por si un alumno no puede usar la suya.
@@ -258,7 +258,7 @@ Al terminar, el participante podrá:
 
 ## Riesgos comunes y mitigación
 
-- **Claves que no aparecen en el *Codespace*:** el secreto no tiene acceso al repositorio (o al *fork* del alumno) o el *Codespace* se inició antes de crearlo. Ver la sección 7 de `TUTORIAL_SECRETOS.md`.
+- **Claves que no aparecen en el *Codespace*:** el secreto no tiene acceso al repositorio (o al *fork* del alumno) o el *Codespace* se inició antes de crearlo. Ver la sección 7 de `00_claves_de_api_y_secretos.ipynb`.
 - **Límites de la API (cuota o tasa):** las celdas están pensadas para pocas ejecuciones; usar un modelo pequeño (`MODELO=google_genai:gemini-3.5-flash`) y la clave de respaldo.
 - **Respuestas distintas a las del instructor:** es normal; se discute el comportamiento (herramientas, orden, argumentos), no el texto exacto.
 - **`asyncio.run()` en *Jupyter*:** falla porque ya hay un *event loop*; usar `await` directamente en la celda.

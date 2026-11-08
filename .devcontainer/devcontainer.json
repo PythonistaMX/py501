@@ -15,11 +15,11 @@
   "secrets": {
     "GOOGLE_API_KEY": {
       "description": "Obligatoria. Clave de la Gemini API: el curso usa Gemini como modelo.",
-      "documentationUrl": "https://github.com/PythonistaMX/py501/blob/main/TUTORIAL_SECRETOS.md"
+      "documentationUrl": "https://github.com/PythonistaMX/py501/blob/main/00_claves_de_api_y_secretos.ipynb"
     },
     "LANGSMITH_API_KEY": {
       "description": "Recomendada. Clave de LangSmith para trazas y evaluaciones.",
-      "documentationUrl": "https://github.com/PythonistaMX/py501/blob/main/TUTORIAL_SECRETOS.md"
+      "documentationUrl": "https://github.com/PythonistaMX/py501/blob/main/00_claves_de_api_y_secretos.ipynb"
     },
     "OPENAI_API_KEY": {
       "description": "Opcional: clave de OpenAI para comparar modelos."

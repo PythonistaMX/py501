@@ -52,6 +52,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 
 | Módulo | Temas | Notebooks |
 | :--- | :--- | :--- |
+| Pre-trabajo | Claves de API de *Gemini* y *LangSmith*, secretos de *Codespaces*, verificación y seguridad | `00` |
 | 1. Fundamentos | Qué es un agente, ciclo de razonar-actuar-observar, autonomía, patrones y modos de falla | `01`-`02` |
 | 2. Ecosistema *LangChain* v1 | Paquetes, modelos intercambiables, bloques de contenido, salida estructurada, `create_agent` | `03`-`04` |
 | 3. Herramientas, contexto y RAG | Ingeniería de contexto, diseño de herramientas, fragmentación, *embeddings*, reordenamiento | `05`-`06` |
@@ -71,6 +72,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 ### 📚 Contenidos
 
 #### 🧭 Tabla de contenidos (enlaces rápidos)
+- [00_claves_de_api_y_secretos.ipynb](00_claves_de_api_y_secretos.ipynb)
 - [01_bienvenida_y_entorno.ipynb](01_bienvenida_y_entorno.ipynb)
 - [02_que_es_un_agente.ipynb](02_que_es_un_agente.ipynb)
 - [03_ecosistema_langchain_v1.ipynb](03_ecosistema_langchain_v1.ipynb)
@@ -86,6 +88,9 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 - [13_evaluacion_y_observabilidad.ipynb](13_evaluacion_y_observabilidad.ipynb)
 - [14_seguridad_costos_y_despliegue.ipynb](14_seguridad_costos_y_despliegue.ipynb)
 - [15_demo_final_integradora.ipynb](15_demo_final_integradora.ipynb)
+
+#### 🔹 Pre-trabajo
+* `00` - Claves de API: qué es un secreto, el modelo del curso (*Gemini*), obtener las claves de *Gemini* y *LangSmith*, guardarlas como secretos de *Codespaces*, verificarlas sin mostrarlas, auditar que no haya claves en el repositorio, errores comunes, fugas, ejecución local y secretos de GitHub Actions.
 
 #### 🔹 Módulo 1: Fundamentos de sistemas agénticos
 * `01` - Bienvenida, reglas del curso, modelo del curso (*Gemini*), claves de API como secretos de *Codespaces* y verificación del entorno.
@@ -122,7 +127,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 #### 🔹 Módulo 10: Demo final
 * `15` - Sistema completo: RAG, MCP, grafo con clasificador, *middleware*, memoria por usuario y prueba de regresión.
 
-> **📝 Nota:** Las celdas `# TU CÓDIGO AQUÍ` y **✍️ Tu respuesta** son para ti. Las versiones resueltas están en `soluciones/` (`NN_..._soluciones.ipynb`); `01` y `15` no tienen ejercicios. Cada *notebook* es independiente y se puede abrir y ejecutar por separado.
+> **📝 Nota:** Las celdas `# TU CÓDIGO AQUÍ` y **✍️ Tu respuesta** son para ti. Las versiones resueltas están en `soluciones/` (`NN_..._soluciones.ipynb`); `00`, `01` y `15` no tienen ejercicios. Cada *notebook* es independiente y se puede abrir y ejecutar por separado.
 
 #### 📁 Datos y servicios
 * `data/politicas/` - Políticas internas de *Andina Logística* (empresa ficticia): vacaciones, equipo de cómputo y gastos de viaje.
@@ -136,7 +141,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 
 ### 1. Claves de API (antes de la primera sesión)
 
-📘 **Sigue el tutorial paso a paso: [`TUTORIAL_SECRETOS.md`](TUTORIAL_SECRETOS.md).** Explica cómo obtener cada clave, cómo guardarla como secreto de Codespaces, cómo verificarla sin mostrarla, los errores comunes y qué hacer si una clave se filtra.
+📘 **Sigue el *notebook* [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb).** Puedes leerlo aquí en GitHub antes de crear el *Codespace* y ejecutar sus celdas de verificación ya dentro de él. Explica cómo obtener cada clave, cómo guardarla como secreto de Codespaces, cómo verificarla sin mostrarla, los errores comunes y qué hacer si una clave se filtra.
 
 | Secreto | Obligatorio | Dónde se obtiene |
 | :--- | :--- | :--- |
@@ -162,7 +167,7 @@ El entorno se iniciará automáticamente con:
 
 > ⚠️ **ADVERTENCIA: el ecosistema cambia rápido.** El curso usa *LangChain* 1.4 y *LangGraph* 1.2. Los tutoriales anteriores a la versión 1.0 (octubre de 2025) usan `AgentExecutor`, `initialize_agent` o `create_react_agent`, que hoy son código heredado. `deepagents` aún no llega a la versión 1.0 y puede romper compatibilidad entre versiones menores. No actualices `requirements.txt` durante el curso.
 
-La primera vez tarda unos minutos porque instala las librerías. Si creaste los secretos con el *Codespace* ya abierto, detenlo y vuelve a abrirlo para que se carguen. Después abre `01_bienvenida_y_entorno.ipynb`, elige el kernel **Python 3.12** (`/usr/local/bin/python`) en **Select Kernel** y ejecuta las celdas en orden con `Shift + Enter`.
+La primera vez tarda unos minutos porque instala las librerías. Si creaste los secretos con el *Codespace* ya abierto, detenlo y vuelve a abrirlo para que se carguen. Después abre `00_claves_de_api_y_secretos.ipynb`, ejecuta su sección 6 para verificar las claves, y continúa con `01_bienvenida_y_entorno.ipynb`, elige el kernel **Python 3.12** (`/usr/local/bin/python`) en **Select Kernel** y ejecuta las celdas en orden con `Shift + Enter`.
 
 > 💡 Cada ejecución llama a *Gemini* y consume la cuota de tu `GOOGLE_API_KEY`; el nivel gratuito tiene límites por minuto y por día. Codespaces se detiene solo tras un rato de inactividad; para no gastar tus horas gratuitas, detenlo al terminar: **github.com/codespaces** → `…` → **Stop codespace**.
 
@@ -181,7 +186,7 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Configurar claves (ver la sección 9 de TUTORIAL_SECRETOS.md)
+# Configurar claves (ver la sección 9 de 00_claves_de_api_y_secretos.ipynb)
 cp .env.example .env      # y completa GOOGLE_API_KEY
 
 # Iniciar Jupyter
