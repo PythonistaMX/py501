@@ -1,0 +1,65 @@
+{
+  "name": "py501 · Aplicaciones Agénticas con LangChain (Pythonista)",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+
+  "secrets": {
+    "GOOGLE_API_KEY": {
+      "description": "Clave de la Gemini API (proveedor por defecto del curso).",
+      "documentationUrl": "https://ai.google.dev/gemini-api/docs/api-key"
+    },
+    "LANGSMITH_API_KEY": {
+      "description": "Clave de LangSmith para trazas y evaluaciones.",
+      "documentationUrl": "https://docs.smith.langchain.com/"
+    },
+    "OPENAI_API_KEY": {
+      "description": "Opcional: clave de OpenAI para comparar modelos."
+    },
+    "ANTHROPIC_API_KEY": {
+      "description": "Opcional: clave de Anthropic para comparar modelos."
+    }
+  },
+
+  "containerEnv": {
+    "LANGSMITH_TRACING": "true",
+    "LANGSMITH_PROJECT": "py501"
+  },
+
+  "postCreateCommand": "python -m pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "jupyter.notebookFileRoot": "${fileDirname}",
+        "files.exclude": {
+          "**/__pycache__": true,
+          "**/.ipynb_checkpoints": true
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "tamasfe.even-better-toml",
+        "njpwerner.autodocstring"
+      ]
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# Entorno del curso py501 "Aplicaciones Agénticas con LangChain" (Python 3.12)
+# Versiones fijadas el 2026-11-07: el ecosistema cambia rápido; no actualizar durante una edición del curso.
+# Núcleo
+langchain==1.4.9
+langchain-core==1.7.6
+langgraph==1.2.20
+langgraph-checkpoint-sqlite==3.1.3
+langsmith==0.14.17
+langchain-text-splitters==1.1.3
+# Proveedores de modelos (Gemini por defecto; OpenAI y Anthropic opcionales)
+langchain-google-genai==4.4.3
+langchain-openai==1.7.4
+langchain-anthropic==1.7.10
+# MCP
+langchain-mcp-adapters==0.3.2
+mcp==1.30.0
+# Deep Agents (antes de la 1.0: puede romper compatibilidad entre versiones menores)
+deepagents==0.7.34
+# Cálculo numérico (búsqueda vectorial en memoria)
+numpy>=2.1.3
+# Jupyter
+jupyterlab>=4.2.5
+ipykernel>=6.29.5
+nbformat>=5.10.4
+python-dotenv>=1.2.4
