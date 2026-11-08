@@ -1,0 +1,145 @@
+name: Notebooks Smoke Test
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # Siempre: estructura de los notebooks, sintaxis de cada celda y servidor MCP (sin claves de API).
+  validar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate notebooks and compile code cells
+        run: |
+          python - <<'PY'
+          import ast
+          import glob
+          import os
+          import sys
+
+          import nbformat
+
+          NOTEBOOKS = sorted(glob.glob("[0-9][0-9]_*.ipynb"))
+          NOTEBOOKS += sorted(glob.glob(os.path.join("soluciones", "[0-9][0-9]_*_soluciones.ipynb")))
+          fallas = []
+          for path in NOTEBOOKS:
+              nb = nbformat.read(path, as_version=4)
+              nbformat.validate(nb)
+              for i, cell in enumerate(nb.cells):
+                  if cell.cell_type != "code":
+                      continue
+                  fuente = "\n".join(l for l in cell.source.splitlines() if not l.lstrip().startswith(("%", "!")))
+                  try:
+                      compile(fuente, f"{path}[{i}]", "exec", flags=ast.PyCF_ALLOW_TOP_LEVEL_AWAIT | ast.PyCF_ONLY_AST)
+                  except SyntaxError as exc:
+                      fallas.append(f"{path} celda {i}: {exc}")
+              print(f"[OK] {path}")
+          if fallas:
+              print("\n[VALIDACIÓN] Fallaron:", *fallas, sep="\n  - ")
+              sys.exit(1)
+          PY
+
+      - name: Check MCP tickets server
+        env:
+          TICKETS_DB: /tmp/tickets.db
+        run: |
+          python - <<'PY'
+          import asyncio
+          import sys
+
+          from langchain_mcp_adapters.client import MultiServerMCPClient
+
+          async def main():
+              cliente = MultiServerMCPClient({"tickets": {
+                  "transport": "stdio", "command": sys.executable,
+                  "args": ["mcp_servers/tickets_server.py"]}})
+              nombres = sorted(h.name for h in await cliente.get_tools())
+              assert nombres == ["cerrar_ticket", "consultar_tickets", "crear_ticket"], nombres
+              print("[OK] servidor MCP:", nombres)
+
+          asyncio.run(main())
+          PY
+
+  # Solo si el repositorio tiene los secretos GOOGLE_API_KEY y LANGSMITH_API_KEY (Settings → Secrets → Actions).
+  ejecutar:
+    needs: validar
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      LANGSMITH_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}
+      LANGSMITH_TRACING: "true"
+      LANGSMITH_PROJECT: py501-ci
+
+    steps:
+      - name: Checkout
+        if: env.GOOGLE_API_KEY != ''
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        if: env.GOOGLE_API_KEY != ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        if: env.GOOGLE_API_KEY != ''
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install nbclient
+
+      - name: Execute topic notebooks (NN_*) and solutions
+        if: env.GOOGLE_API_KEY != ''
+        run: |
+          python - <<'PY'
+          import glob
+          import os
+          import sys
+
+          import nbformat
+          from nbclient import NotebookClient
+
+          NOTEBOOKS = sorted(glob.glob("[0-9][0-9]_*.ipynb"))
+          NOTEBOOKS += sorted(glob.glob(os.path.join("soluciones", "[0-9][0-9]_*_soluciones.ipynb")))
+
+          fallas = []
+          for path in NOTEBOOKS:
+              print(f"\n[SMOKE] Ejecutando: {path}")
+              nb = nbformat.read(path, as_version=4)
+              client = NotebookClient(nb, timeout=600, kernel_name="python3", allow_errors=False,
+                                      resources={"metadata": {"path": os.path.dirname(path) or "."}})
+              try:
+                  client.execute()
+                  print(f"[OK] {path}")
+              except Exception as exc:  # noqa: BLE001
+                  print(f"[ERROR] {path}: {type(exc).__name__}: {str(exc)[:500]}")
+                  fallas.append(path)
+
+          if fallas:
+              print("\n[SMOKE] Fallaron:", *fallas, sep="\n  - ")
+              sys.exit(1)
+          print("\n[SMOKE] Todos los notebooks se ejecutaron sin errores.")
+          PY
+
+      - name: Skip notice
+        if: env.GOOGLE_API_KEY == ''
+        run: echo "Sin GOOGLE_API_KEY en los secretos de Actions; se omite la ejecución de notebooks."
