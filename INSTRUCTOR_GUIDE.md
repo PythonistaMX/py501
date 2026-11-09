@@ -153,7 +153,7 @@ Al terminar, el participante podrá:
 Al terminar, el participante podrá:
 1. Construir un supervisor con especialistas como herramientas y comparar costo y latencia.
 2. Distinguir memoria de corto y largo plazo e implementar memoria por usuario con `ToolRuntime`.
-3. Usar `create_deep_agent` con lista de tareas, archivos y subagentes.
+3. Usar `create_deep_agent` con lista de tareas, archivos y subagentes, y darle instrucciones con `AGENTS.md` y *skills*.
 
 **Agenda (120 min):**
 
@@ -163,8 +163,8 @@ Al terminar, el participante podrá:
 | 25 | Supervisor vs. un solo agente; ejercicio 2 | `10_patrones_multiagente` |
 | 15 | Tipos de memoria; herramientas con `ToolRuntime` | `11_memoria_de_largo_plazo` |
 | 25 | Memoria por usuario; ejercicios 1 y 2 | `11_memoria_de_largo_plazo` |
-| 30 | Agente profundo de análisis de políticas y caso de diseño | `12_deep_agents` |
-| 15 | Holgura y cierre | — |
+| 40 | Agente profundo de análisis de políticas, *harness*, *skills* y caso de diseño | `12_deep_agents` |
+| 5 | Holgura y cierre | — |
 
 ### Sesión 7 · Módulos 8 y 9: Evaluación y seguridad
 
@@ -188,7 +188,7 @@ Al terminar, el participante podrá:
 | 30 | Ejercicio 1: corregir el peor caso sin regresiones | `13_evaluacion_y_observabilidad` |
 | 20 | LLM como juez (ejercicio 2) | `13_evaluacion_y_observabilidad` |
 | 20 | El experimento en *LangSmith* | `13_evaluacion_y_observabilidad` |
-| 35 | Inyección indirecta y ejercicio 1 (defender el agente) | `14_seguridad_costos_y_despliegue` |
+| 35 | Inyección indirecta, permisos y *sandboxes*, y ejercicio 1 (defender el agente) | `14_seguridad_costos_y_despliegue` |
 
 ### Sesión 8 · Módulos 9 y 10: Costos, despliegue y demo final
 
