@@ -66,7 +66,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 ### Práctica
 
 * Los *notebooks* `02` a `14` tienen **ejercicios básicos** y **retos opcionales**; se trabajan en clase y como práctica.
-* `15_demo_final_integradora.ipynb` es la demo del instructor y la referencia para el proyecto final.
+* `15_demo_final_integradora.ipynb` es la demo del instructor y la referencia para construir tu propio agente.
 
 ### 📚 Contenidos
 

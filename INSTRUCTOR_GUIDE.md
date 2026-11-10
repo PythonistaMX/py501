@@ -215,7 +215,7 @@ Al terminar, el participante podrá:
 | 20 | Demo: RAG + MCP + *middleware* + memoria | `15_demo_final_integradora` |
 | 15 | Demo: el grafo completo e interrupción anidada | `15_demo_final_integradora` |
 | 15 | Demo: regresión al cambiar de modelo | `15_demo_final_integradora` |
-| 30 | Preguntas, revisión de documentos de arquitectura y cierre | — |
+| 30 | Preguntas y cierre | — |
 
 ## Resultados de aprendizaje por módulo
 
@@ -228,19 +228,6 @@ Al terminar, el participante podrá:
 - 7. Memoria y *Deep Agents*: dar memoria por usuario y resolver tareas largas.
 - 8. Evaluación: medir respuesta y trayectoria y controlar regresiones.
 - 9. Seguridad, costos y despliegue: aplicar defensa en profundidad, estimar costos y elegir dónde desplegar.
-
-## Evaluación
-
-| Componente | Peso | Descripción |
-|---|---|---|
-| Agente de laboratorio | 40% | El asistente construido en `04` a `13` funciona de punta a punta y aprueba al menos 12 de los 15 casos de `13` |
-| Documento de arquitectura | 30% | Propuesta de un agente para su propio trabajo: patrón, herramientas, *middleware*, memoria, evaluación y riesgos (máximo 4 páginas), revisado con la lista de `14` |
-| Casos de diseño | 20% | Participación en los ejercicios de respuesta escrita (`02`, `05`, `08`, `10`, `11`, `12`) |
-| Examen corto | 10% | 15 preguntas de opción múltiple sobre conceptos y decisiones |
-
-### Reglas sugeridas
-
-- **Sugerido:** cuenta como asistencia estar conectado al menos 90 de los 120 minutos; ver la grabación no cuenta.
 
 ## Checklist previa a clase
 
