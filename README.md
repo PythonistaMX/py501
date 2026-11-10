@@ -52,8 +52,7 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 
 | Módulo | Temas | Notebooks |
 | :--- | :--- | :--- |
-| Sesión 1 (inicio) | Claves de API de *Gemini* y *LangSmith*, secretos de *Codespaces*, verificación y seguridad | `00` |
-| 1. Fundamentos | Qué es un agente, ciclo de razonar-actuar-observar, autonomía, patrones y modos de falla | `01`-`02` |
+| 1. Fundamentos | Claves de API de *Gemini* y *LangSmith* como secretos de *Codespaces*; qué es un agente, ciclo de razonar-actuar-observar, autonomía, patrones y modos de falla | `00`-`02` |
 | 2. Ecosistema *LangChain* v1 | Paquetes, modelos intercambiables, bloques de contenido, salida estructurada, `create_agent` | `03`-`04` |
 | 3. Herramientas, contexto y RAG | Ingeniería de contexto, diseño de herramientas, fragmentación, *embeddings*, reordenamiento | `05`-`06` |
 | 4. MCP | Clientes y servidores MCP, riesgos, comunicación entre agentes (A2A) | `07` |
@@ -89,10 +88,8 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 - [14_seguridad_costos_y_despliegue.ipynb](14_seguridad_costos_y_despliegue.ipynb)
 - [15_demo_final_integradora.ipynb](15_demo_final_integradora.ipynb)
 
-#### 🔹 Sesión 1, primera parte: claves de API
-* `00` - Claves de API: qué es un secreto, el modelo del curso (*Gemini*), obtener las claves de *Gemini* y *LangSmith*, guardarlas como secretos de *Codespaces*, verificarlas sin mostrarlas, auditar que no haya claves en el repositorio, errores comunes, fugas, ejecución local y secretos de GitHub Actions.
-
 #### 🔹 Módulo 1: Fundamentos de sistemas agénticos
+* `00` - Claves de API: qué es un secreto, el modelo del curso (*Gemini*), obtener las claves de *Gemini* y *LangSmith*, guardarlas como secretos de *Codespaces*, verificarlas sin mostrarlas, auditar que no haya claves en el repositorio, errores comunes, fugas, ejecución local y secretos de GitHub Actions.
 * `01` - Bienvenida, reglas del curso, modelo del curso (*Gemini*), claves de API como secretos de *Codespaces* y verificación del entorno.
 * `02` - Qué es un agente; el ciclo de razonar, actuar y observar construido a mano; niveles de autonomía; patrones (ReAct, planificar y ejecutar, reflexión, orquestador); modos de falla.
 
@@ -139,9 +136,9 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 
 ¡Olvídate de configurar entornos locales! Este repositorio está configurado para **GitHub Codespaces**.
 
-### 1. Claves de API (primera parte de la sesión 1)
+### 1. Claves de API
 
-En la sesión 1 se configuran las claves con el instructor; si quieres adelantarte, 📘 **sigue el *notebook* [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb).** Puedes leerlo aquí en GitHub antes de crear el *Codespace* y ejecutar sus celdas de verificación ya dentro de él. Explica cómo obtener cada clave, cómo guardarla como secreto de Codespaces, cómo verificarla sin mostrarla, los errores comunes y qué hacer si una clave se filtra.
+Las claves se configuran en clase, con el instructor, al inicio del módulo 1; si quieres adelantarte, 📘 **sigue el *notebook* [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb).** Puedes leerlo aquí en GitHub antes de crear el *Codespace* y ejecutar sus celdas de verificación ya dentro de él. Explica cómo obtener cada clave, cómo guardarla como secreto de Codespaces, cómo verificarla sin mostrarla, los errores comunes y qué hacer si una clave se filtra.
 
 | Secreto | Obligatorio | Dónde se obtiene |
 | :--- | :--- | :--- |
