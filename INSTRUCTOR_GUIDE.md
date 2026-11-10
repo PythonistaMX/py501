@@ -6,7 +6,7 @@ Guía operativa para impartir **Py501 · Aplicaciones Agénticas Profesionales c
 
 Los *notebooks* se numeran por tema, en orden, a lo largo de todo el curso; cada sesión abarca uno o varios, como indica la agenda de cada sesión más abajo.
 
-Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `00`, `01` y `15` no tienen ejercicios ni soluciones. `00_claves_de_api_y_secretos.ipynb` es **pre-trabajo**: se resuelve antes de la sesión 1.
+Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `00`, `01` y `15` no tienen ejercicios ni soluciones. `00_claves_de_api_y_secretos.ipynb` se resuelve en la **primera parte de la sesión 1**, guiado por el instructor.
 
 **Modelo del curso:** *Gemini* (`google_genai:gemini-3.5-flash` y `google_genai:gemini-embedding-001`). Todo el material está probado con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en la sesión 1: el código es portable, pero en clase todos usan *Gemini*.
 
@@ -20,9 +20,9 @@ Los ejercicios que no alcancen a resolverse en clase quedan como práctica; los 
 
 ### Sesión 1 · Módulos 1 y 2: Fundamentos y ecosistema
 
-**Notebooks:** [`01_bienvenida_y_entorno`](01_bienvenida_y_entorno.ipynb), [`02_que_es_un_agente`](02_que_es_un_agente.ipynb), [`03_ecosistema_langchain_v1`](03_ecosistema_langchain_v1.ipynb).
+**Notebooks:** [`00_claves_de_api_y_secretos`](00_claves_de_api_y_secretos.ipynb), [`01_bienvenida_y_entorno`](01_bienvenida_y_entorno.ipynb), [`02_que_es_un_agente`](02_que_es_un_agente.ipynb), [`03_ecosistema_langchain_v1`](03_ecosistema_langchain_v1.ipynb).
 
-**Descripción:** En esta sesión se verificará el entorno, se construirá a mano el ciclo de un agente y se recorrerá el ecosistema *LangChain* 1.x.
+**Descripción:** En esta sesión se crearán las claves de API como secretos de *Codespaces*, se verificará el entorno, se construirá a mano el ciclo de un agente y se recorrerá el ecosistema *LangChain* 1.x.
 
 **Objetivo:** Entender qué es un agente **construyendo su ciclo a mano** y decidir cuándo conviene usarlo.
 
@@ -36,13 +36,14 @@ Al terminar, el participante podrá:
 
 | Min | Bloque | Notebook |
 |---|---|---|
-| 15 | Bienvenida, reglas, secretos y verificación del entorno | `01_bienvenida_y_entorno` |
+| 10 | Bienvenida, reglas del curso y modelo del curso (*Gemini*) | `01_bienvenida_y_entorno` |
+| 25 | Claves de *Gemini* y *LangSmith*, secretos de *Codespaces* y verificación (incluye holgura para problemas de claves) | `00_claves_de_api_y_secretos` |
+| 5 | Verificación del entorno: versiones, llamada a *Gemini* y servidor MCP | `01_bienvenida_y_entorno` |
 | 15 | Del modelo al agente; niveles de autonomía | `02_que_es_un_agente` |
 | 25 | El ciclo a mano y ejercicio 1 (pasos y tokens) | `02_que_es_un_agente` |
 | 10 | Patrones, modos de falla y caso de diseño (ejercicio 2) | `02_que_es_un_agente` |
 | 15 | Mapa de paquetes, modelos intercambiables y bloques de contenido | `03_ecosistema_langchain_v1` |
-| 25 | Salida estructurada y ejercicios 1 y 2 | `03_ecosistema_langchain_v1` |
-| 15 | Holgura: problemas de claves o *Codespace* | — |
+| 15 | Salida estructurada y ejercicio 1 (el ejercicio 2 queda como práctica) | `03_ecosistema_langchain_v1` |
 
 ### Sesión 2 · Módulos 2 y 3: Primer agente y diseño de herramientas
 
@@ -243,7 +244,8 @@ Al terminar, el participante podrá:
 
 ## Checklist previa a clase
 
-- Enviar a los alumnos, una semana antes, el enlace al *notebook* [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb) y pedirles que creen `GOOGLE_API_KEY` y `LANGSMITH_API_KEY`, las guarden como secretos de *Codespaces* y ejecuten la sección 6 de `00_claves_de_api_y_secretos.ipynb` y `01_bienvenida_y_entorno` completo.
+- Recordar a los alumnos que traigan una cuenta de GitHub y una de Google con acceso a *Google AI Studio*: las claves se crean en clase con [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb). Compartir el enlace como opcional para quien quiera adelantarse.
+- Tener lista una clave de respaldo para quien no pueda crear la suya en clase.
 - Codespace creado desde `main` y dependencias instaladas (`postCreateCommand`).
 - Los *notebooks* de la sesión y sus versiones en `soluciones/` corren de principio a fin con una clave real (workflow `notebooks-smoke.yml` en verde, con los secretos del repositorio configurados).
 - Una clave de respaldo del instructor por si un alumno no puede usar la suya.
