@@ -22,6 +22,12 @@ Este curso asume *Python* intermedio: funciones, clases, tipos, `async`/`await` 
 | Py101 | Introducción a la Programación con Python | [PythonistaMX/py101](https://github.com/PythonistaMX/py101) |
 | Py111 | Programación Orientada a Objetos con Python | [PythonistaMX/py111](https://github.com/PythonistaMX/py111) |
 
+### Cursos relacionados
+
+| Curso | Título | Repositorio |
+| :--- | :--- | :--- |
+| Py521 | IA Generativa en Entornos Locales (modelos locales con Ollama, llama.cpp y vLLM) | [PythonistaMX/py521](https://github.com/PythonistaMX/py521) |
+
 ---
 
 ## 🚀 Acerca del Curso
