@@ -28,7 +28,7 @@ Los ejercicios que no alcancen a resolverse en clase quedan como práctica; los 
 
 Al terminar, el participante podrá:
 1. Explicar el ciclo de razonar, actuar y observar, y los niveles de autonomía.
-2. Reconocer los patrones ReAct, planificar y ejecutar, reflexión y orquestador.
+2. Reconocer los patrones ReAct, planificar y ejecutar, reflexión y supervisor y trabajadores.
 3. Identificar los modos de falla de un agente y su defensa.
 4. Inicializar modelos de cualquier proveedor con `init_chat_model` y obtener salida estructurada.
 
@@ -241,6 +241,15 @@ Al terminar, el participante podrá:
 
 - Se cubrieron los objetivos del bloque.
 - Dudas frecuentes registradas para mejorar los *notebooks*.
+
+## Secretos de GitHub Actions (CI)
+
+Los secretos de *Codespaces* **no** están disponibles para GitHub Actions. Para que el *workflow* `notebooks-smoke.yml` ejecute los *notebooks* con un modelo real:
+
+1. En el repositorio: **Settings → Secrets and variables → Actions → New repository secret**.
+2. Crea `GOOGLE_API_KEY` y `LANGSMITH_API_KEY` con claves **dedicadas a CI** (no tu clave personal), con presupuesto propio.
+
+Sin esos secretos, el *workflow* solo valida la estructura y la sintaxis de los *notebooks* y el servidor MCP, y omite la ejecución.
 
 ## Riesgos comunes y mitigación
 
