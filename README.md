@@ -210,9 +210,14 @@ En local, la celda de preparación de cada *notebook* carga `.env` automáticame
 
 ## 📖 Recursos Adicionales
 
-* [Documentación oficial de *LangChain*](https://docs.langchain.com/oss/python/langchain/overview)
-* [Documentación oficial de *LangGraph*](https://docs.langchain.com/oss/python/langgraph/overview)
-* [Documentación oficial de *LangSmith*](https://docs.smith.langchain.com/)
+La documentación oficial de *LangChain*, *LangGraph* y *LangSmith* puede ser consultada en:
+
+* https://docs.langchain.com/oss/python/langchain/overview
+* https://docs.langchain.com/oss/python/langgraph/overview
+* https://docs.langchain.com/langsmith/observability
+
+Otros recursos:
+
 * [Especificación de *Model Context Protocol*](https://modelcontextprotocol.io/)
 * [Anuncio de *LangChain* y *LangGraph* 1.0](https://www.langchain.com/blog/langchain-langgraph-1dot0)
 
