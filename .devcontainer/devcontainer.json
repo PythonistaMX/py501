@@ -14,7 +14,7 @@
 
   "secrets": {
     "GOOGLE_API_KEY": {
-      "description": "Obligatoria. Clave de la Gemini API: el curso usa Gemini como modelo.",
+      "description": "Obligatoria. Clave de la Gemini API: el taller usa Gemini como modelo.",
       "documentationUrl": "https://github.com/PythonistaMX/py501/blob/main/00_claves_de_api_y_secretos.ipynb"
     },
     "LANGSMITH_API_KEY": {

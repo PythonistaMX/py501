@@ -1,4 +1,4 @@
-# Aplicaciones Agénticas Profesionales con LangChain (Py501)
+# Aplicaciones Agénticas con LangChain (Py501)
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Codespaces](https://img.shields.io/badge/GitHub-Codespaces-brightgreen?style=for-the-badge&logo=github&logoColor=white)](https://codespaces.new/PythonistaMX/py501)
@@ -7,7 +7,7 @@
 [![LangGraph](https://img.shields.io/badge/Runtime-LangGraph-1C3C3C?style=for-the-badge)](https://docs.langchain.com/oss/python/langgraph/overview)
 [![Gemini](https://img.shields.io/badge/Modelo-Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
-Este repositorio contiene el material oficial del curso **Py501 · Aplicaciones Agénticas Profesionales con LangChain** de **Pythonista®**, impartido por José Luis Chiquete. El curso enseña a diseñar, controlar, evaluar y operar agentes de IA con el ecosistema *LangChain* 1.x: herramientas, RAG, MCP, *middleware*, *LangGraph*, memoria, *Deep Agents*, evaluación, seguridad y despliegue.
+Este repositorio contiene el material del taller **Py501 · Aplicaciones Agénticas con LangChain** de **Pythonista®**, impartido por José Luis Chiquete. El taller enseña a diseñar, controlar, evaluar y operar agentes de IA con el ecosistema *LangChain* 1.x: herramientas, RAG, MCP, *middleware*, *LangGraph*, memoria, *Deep Agents*, evaluación, seguridad y despliegue.
 
 ---
 
@@ -15,7 +15,7 @@ Este repositorio contiene el material oficial del curso **Py501 · Aplicaciones 
 
 ### Prerequisitos recomendados
 
-Este curso asume *Python* intermedio: funciones, clases, tipos, `async`/`await` y consumo de APIs.
+Este taller asume *Python* intermedio: funciones, clases, tipos, `async`/`await` y consumo de APIs.
 
 | Curso | Título | Repositorio |
 | :--- | :--- | :--- |
@@ -30,9 +30,9 @@ Este curso asume *Python* intermedio: funciones, clases, tipos, `async`/`await` 
 
 ---
 
-## 🚀 Acerca del Curso
+## 🚀 Acerca del taller
 
-Un curso de **8 sesiones en vivo de 2 horas** (16 horas) sobre *notebooks* de *Jupyter* que corren en **GitHub Codespaces**: cerca de 60% teoría y casos de diseño, 30% laboratorios guiados y 10% demo final. Al completarlo serás capaz de:
+Un taller de **8 bloques de 2 horas** sobre *notebooks* de *Jupyter* que corren en **GitHub Codespaces**: cerca de 60% teoría y casos de diseño, 30% laboratorios guiados y 10% demo final. Al completarlo serás capaz de:
 
 * **Decidir cuándo usar un agente:** niveles de autonomía, patrones de diseño y modos de falla.
 * **Construir agentes con `create_agent`:** herramientas bien diseñadas, salida estructurada y *streaming*, con cualquier proveedor de modelos.
@@ -42,19 +42,19 @@ Un curso de **8 sesiones en vivo de 2 horas** (16 horas) sobre *notebooks* de *J
 * **Dar memoria a los agentes:** memoria por hilo y por usuario, y agentes profundos para tareas largas.
 * **Llevar un agente a producción:** evaluación de respuesta y trayectoria, observabilidad, seguridad, costos y despliegue.
 
-### 🤖 Modelo del curso: Gemini
+### 🤖 Modelo del taller: Gemini
 
-**En este curso se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.8-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos y probados con esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
+**En este taller se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.8-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos y probados con esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
 
-El código **no depende de Gemini**: *LangChain* usa la misma interfaz para cualquier proveedor y basta cambiar la cadena `"proveedor:modelo"` (el *notebook* `03` lo demuestra con *OpenAI* y *Anthropic*). Usamos un solo modelo para que todo el grupo vea el mismo comportamiento y compare resultados en igualdad de condiciones. Para cambiarlo en todo el curso, define las variables de entorno `MODELO` y `EMBEDDINGS`.
+El código **no depende de Gemini**: *LangChain* usa la misma interfaz para cualquier proveedor y basta cambiar la cadena `"proveedor:modelo"` (el *notebook* `03` lo demuestra con *OpenAI* y *Anthropic*). Usamos un solo modelo para que todo el grupo vea el mismo comportamiento y compare resultados en igualdad de condiciones. Para cambiarlo en todo el taller, define las variables de entorno `MODELO` y `EMBEDDINGS`.
 
-A lo largo del curso se construye un mismo sistema: el **asistente de soporte interno** de *Andina Logística*, una empresa ficticia, que consulta políticas, gestiona tickets por MCP y escala casos a una persona.
+A lo largo del taller se construye un mismo sistema: el **asistente de soporte interno** de *Andina Logística*, una empresa ficticia, que consulta políticas, gestiona tickets por MCP y escala casos a una persona.
 
 ---
 
 ## 📅 Temario y Estructura
 
-El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. Los *notebooks* se numeran por tema y cada sesión abarca uno o varios.
+El taller consta de **8 bloques de 2 horas**, divididos en 10 módulos. Los *notebooks* se numeran por tema y cada bloque abarca uno o varios.
 
 | Módulo | Temas | Notebooks |
 | :--- | :--- | :--- |
@@ -95,8 +95,8 @@ El curso consta de **8 sesiones en vivo de 2 horas**, divididas en 10 módulos. 
 - [15_demo_final_integradora.ipynb](15_demo_final_integradora.ipynb)
 
 #### 🔹 Módulo 1: Fundamentos de sistemas agénticos
-* `00` - Claves de API: qué es un secreto, el modelo del curso (*Gemini*), obtener las claves de *Gemini* y *LangSmith*, guardarlas como secretos de *Codespaces*, verificarlas sin mostrarlas, auditar que no haya claves en el repositorio, errores comunes, fugas, ejecución local y secretos de GitHub Actions.
-* `01` - Bienvenida, reglas del curso, modelo del curso (*Gemini*), claves de API como secretos de *Codespaces* y verificación del entorno.
+* `00` - Claves de API: qué es un secreto, el modelo del taller (*Gemini*), obtener las claves de *Gemini* y *LangSmith*, guardarlas como secretos de *Codespaces*, verificarlas sin mostrarlas, auditar que no haya claves en el repositorio, errores comunes, fugas, ejecución local y secretos de GitHub Actions.
+* `01` - Bienvenida, reglas del taller, modelo del taller (*Gemini*), claves de API como secretos de *Codespaces* y verificación del entorno.
 * `02` - Qué es un agente; el ciclo de razonar, actuar y observar construido a mano; niveles de autonomía; patrones (ReAct, planificar y ejecutar, reflexión, orquestador); modos de falla.
 
 #### 🔹 Módulo 2: El ecosistema *LangChain* v1
@@ -148,7 +148,7 @@ Las claves se configuran en clase, con el instructor, al inicio del módulo 1; s
 
 | Secreto | Obligatorio | Dónde se obtiene |
 | :--- | :--- | :--- |
-| `GOOGLE_API_KEY` | **Sí** (*Gemini*, modelo del curso) | [Google AI Studio](https://aistudio.google.com/) → **API Keys** |
+| `GOOGLE_API_KEY` | **Sí** (*Gemini*, modelo del taller) | [Google AI Studio](https://aistudio.google.com/) → **API Keys** |
 | `LANGSMITH_API_KEY` | Recomendado (trazas y evaluación) | [smith.langchain.com](https://smith.langchain.com/) → **Settings → API Keys** |
 | `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` | No (solo para comparar modelos) | Consola de cada proveedor |
 
@@ -166,9 +166,9 @@ El entorno se iniciará automáticamente con:
 * *Python* 3.12
 * Extensiones de *Python* y *Jupyter* para VS Code
 * *Docker* (para el módulo de despliegue)
-* Todas las librerías del curso con versiones fijadas en `requirements.txt`: *LangChain*, *LangGraph*, *LangSmith*, integraciones de *Gemini*, *OpenAI* y *Anthropic*, adaptadores de MCP y *Deep Agents*.
+* Todas las bibliotecas del taller con versiones fijadas en `requirements.txt`: *LangChain*, *LangGraph*, *LangSmith*, integraciones de *Gemini*, *OpenAI* y *Anthropic*, adaptadores de MCP y *Deep Agents*.
 
-> ⚠️ **ADVERTENCIA: el ecosistema cambia rápido.** El curso usa *LangChain* 1.4 y *LangGraph* 1.2. Los tutoriales anteriores a la versión 1.0 (octubre de 2025) usan `AgentExecutor`, `initialize_agent` o `create_react_agent`, que hoy son código heredado. `deepagents` aún no llega a la versión 1.0 y puede romper compatibilidad entre versiones menores. No actualices `requirements.txt` durante el curso.
+> ⚠️ **ADVERTENCIA: el ecosistema cambia rápido.** El taller usa *LangChain* 1.4 y *LangGraph* 1.2. Los tutoriales anteriores a la versión 1.0 usan `AgentExecutor`, `initialize_agent` o `create_react_agent`, que hoy son código heredado. `deepagents` aún no llega a la versión 1.0 y puede romper compatibilidad entre versiones menores. No actualices `requirements.txt` durante el taller.
 
 La primera vez tarda unos minutos porque instala las librerías. Si creaste los secretos con el *Codespace* ya abierto, detenlo y vuelve a abrirlo para que se carguen. Después abre `00_claves_de_api_y_secretos.ipynb`, ejecuta su sección 6 para verificar las claves, y continúa con `01_bienvenida_y_entorno.ipynb`, elige el kernel **Python 3.12** (`/usr/local/bin/python`) en **Select Kernel** y ejecuta las celdas en orden con `Shift + Enter`.
 

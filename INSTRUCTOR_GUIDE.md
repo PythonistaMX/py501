@@ -1,28 +1,28 @@
 # Instructor Guide - Py501
 
-Guía operativa para impartir **Py501 · Aplicaciones Agénticas Profesionales con LangChain** con consistencia técnica y pedagógica. El material no fija fechas ni horarios para que sirva en cualquier edición.
+Guía operativa para impartir **Py501 · Aplicaciones Agénticas con LangChain** con consistencia técnica y pedagógica. El material no fija fechas ni horarios para que sirva en cualquier edición.
 
-## Estructura (8 sesiones de 2 horas, 16 *notebooks*)
+## Estructura (8 bloques de 2 horas, 16 *notebooks*)
 
-Los *notebooks* se numeran por tema, en orden, a lo largo de todo el curso; cada sesión abarca uno o varios, como indica la agenda de cada sesión más abajo.
+Los *notebooks* se numeran por tema, en orden, a lo largo de todo el taller; cada bloque abarca uno o varios, como indica la agenda de cada bloque más abajo.
 
-Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `00`, `01` y `15` no tienen ejercicios ni soluciones. `00_claves_de_api_y_secretos.ipynb` se resuelve en la **primera parte de la sesión 1**, guiado por el instructor.
+Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `00`, `01` y `15` no tienen ejercicios ni soluciones. `00_claves_de_api_y_secretos.ipynb` se resuelve en los **primeros 25 minutos del bloque 1**, guiado por el instructor; no es trabajo previo.
 
-**Modelo del curso:** *Gemini* (`google_genai:gemini-3.8-flash` y `google_genai:gemini-embedding-001`). Antes de cada edición, el material se ensaya con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en la sesión 1: el código es portable, pero en clase todos usan *Gemini*.
+**Modelo del taller:** *Gemini* (`google_genai:gemini-3.8-flash` y `google_genai:gemini-embedding-001`). Antes de cada edición, el material se ensaya con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en el bloque 1: el código es portable, pero en clase todos usan *Gemini*.
 
 **Hilo conductor:** el asistente de soporte interno de *Andina Logística* (empresa ficticia). Las políticas están en `data/politicas/` y el servidor MCP de tickets en `mcp_servers/tickets_server.py`.
 
 **Proporción:** cerca de 60% teoría y casos de diseño, 30% laboratorios (`04`, `06`, `07`, `08`, `09`, `11`, `13`) y 10% demo final (`15`).
 
-## Objetivos y agenda por sesión
+## Objetivos y agenda por bloque
 
 Los ejercicios que no alcancen a resolverse en clase quedan como práctica; los retos son siempre opcionales.
 
-### Sesión 1 · Módulos 1 y 2: Fundamentos y ecosistema
+### Bloque 1 · Módulos 1 y 2: Fundamentos y ecosistema
 
 **Notebooks:** [`00_claves_de_api_y_secretos`](00_claves_de_api_y_secretos.ipynb), [`01_bienvenida_y_entorno`](01_bienvenida_y_entorno.ipynb), [`02_que_es_un_agente`](02_que_es_un_agente.ipynb), [`03_ecosistema_langchain_v1`](03_ecosistema_langchain_v1.ipynb).
 
-**Descripción:** En esta sesión se crearán las claves de API como secretos de *Codespaces*, se verificará el entorno, se construirá a mano el ciclo de un agente y se recorrerá el ecosistema *LangChain* 1.x.
+**Descripción:** En este bloque se crearán las claves de API como secretos de *Codespaces*, se verificará el entorno, se construirá a mano el ciclo de un agente y se recorrerá el ecosistema *LangChain* 1.x.
 
 **Objetivo:** Entender qué es un agente **construyendo su ciclo a mano** y decidir cuándo conviene usarlo.
 
@@ -34,9 +34,9 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
-| 10 | Bienvenida, reglas del curso y modelo del curso (*Gemini*) | `01_bienvenida_y_entorno` |
+| 10 | Bienvenida, reglas del taller y modelo del taller (*Gemini*) | `01_bienvenida_y_entorno` |
 | 25 | Claves de *Gemini* y *LangSmith*, secretos de *Codespaces* y verificación (incluye holgura para problemas de claves) | `00_claves_de_api_y_secretos` |
 | 5 | Verificación del entorno: versiones, llamada a *Gemini* y servidor MCP | `01_bienvenida_y_entorno` |
 | 15 | Del modelo al agente; niveles de autonomía | `02_que_es_un_agente` |
@@ -45,11 +45,11 @@ Al terminar, el participante podrá:
 | 15 | Mapa de paquetes, modelos intercambiables y bloques de contenido | `03_ecosistema_langchain_v1` |
 | 15 | Salida estructurada y ejercicio 1 (el ejercicio 2 queda como práctica) | `03_ecosistema_langchain_v1` |
 
-### Sesión 2 · Módulos 2 y 3: Primer agente y diseño de herramientas
+### Bloque 2 · Módulos 2 y 3: Primer agente y diseño de herramientas
 
 **Notebooks:** [`04_primer_agente_con_create_agent`](04_primer_agente_con_create_agent.ipynb), [`05_herramientas_y_contexto`](05_herramientas_y_contexto.ipynb).
 
-**Descripción:** En esta sesión se construirá el primer agente con `create_agent` y se estudiará cómo el diseño de herramientas y del contexto determina su calidad.
+**Descripción:** En este bloque se construirá el primer agente con `create_agent` y se estudiará cómo el diseño de herramientas y del contexto determina su calidad.
 
 **Objetivo:** Construir un agente funcional y **diagnosticar su comportamiento con trazas**.
 
@@ -61,7 +61,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 15 | Herramientas y ejercicio 1 (`crear_ticket`) | `04_primer_agente_con_create_agent` |
 | 20 | El agente, su grafo y las trazas | `04_primer_agente_con_create_agent` |
@@ -70,11 +70,11 @@ Al terminar, el participante podrá:
 | 30 | Diseño de herramientas y ejercicios 1 y 2 | `05_herramientas_y_contexto` |
 | 15 | Errores útiles, salidas acotadas y cierre | `05_herramientas_y_contexto` |
 
-### Sesión 3 · Módulos 3 y 4: RAG y MCP
+### Bloque 3 · Módulos 3 y 4: RAG y MCP
 
 **Notebooks:** [`06_rag_como_herramienta`](06_rag_como_herramienta.ipynb), [`07_mcp`](07_mcp.ipynb).
 
-**Descripción:** En esta sesión se conectará el agente a documentos con RAG y a un sistema de tickets con MCP.
+**Descripción:** En este bloque se conectará el agente a documentos con RAG y a un sistema de tickets con MCP.
 
 **Objetivo:** Conectar el agente a **datos** (RAG) y a **sistemas** (MCP) sin código a la medida.
 
@@ -85,7 +85,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 15 | Fragmentación e índice vectorial | `06_rag_como_herramienta` |
 | 20 | Búsqueda como herramienta; RAG clásico vs. agéntico | `06_rag_como_herramienta` |
@@ -94,11 +94,11 @@ Al terminar, el participante podrá:
 | 20 | Agente con políticas + tickets | `07_mcp` |
 | 25 | Servidor propio: ejercicio 1 | `07_mcp` |
 
-### Sesión 4 · Módulos 4 y 5: Riesgos de MCP y *middleware*
+### Bloque 4 · Módulos 4 y 5: Riesgos de MCP y *middleware*
 
 **Notebooks:** [`07_mcp`](07_mcp.ipynb), [`08_middleware`](08_middleware.ipynb).
 
-**Descripción:** En esta sesión se revisarán los riesgos de MCP y se agregará control al agente con *middleware*.
+**Descripción:** En este bloque se revisarán los riesgos de MCP y se agregará control al agente con *middleware*.
 
 **Objetivo:** Agregar **gobierno** al agente sin reescribirlo.
 
@@ -110,7 +110,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 10 | Ejercicio 2 (antigüedad sin preguntar) | `07_mcp` |
 | 20 | Riesgos de MCP, A2A y reto de inyección | `07_mcp` |
@@ -119,11 +119,11 @@ Al terminar, el participante podrá:
 | 35 | *Middleware* propio y ejercicio 2 (aprobar solo lo urgente) | `08_middleware` |
 | 15 | Caso de diseño: orden de la pila para mover dinero | `08_middleware` |
 
-### Sesión 5 · Módulo 6: *LangGraph*
+### Bloque 5 · Módulo 6: *LangGraph*
 
 **Notebooks:** [`09_langgraph_estado_y_grafos`](09_langgraph_estado_y_grafos.ipynb).
 
-**Descripción:** En esta sesión se construirán grafos explícitos con estado, *checkpointers* e interrupciones, y se convertirá el asistente en un grafo durable.
+**Descripción:** En este bloque se construirán grafos explícitos con estado, *checkpointers* e interrupciones, y se convertirá el asistente en un grafo durable.
 
 **Objetivo:** Saber **cuándo bajar de `create_agent` a un grafo propio** y cómo diseñarlo.
 
@@ -135,7 +135,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 20 | Estado, nodos y aristas con un grafo sin modelos | `09_langgraph_estado_y_grafos` |
 | 20 | *Checkpointers*, interrupciones y viaje en el tiempo | `09_langgraph_estado_y_grafos` |
@@ -143,11 +143,11 @@ Al terminar, el participante podrá:
 | 15 | Falla y reanudación | `09_langgraph_estado_y_grafos` |
 | 35 | Ejercicios 1 y 2 (ruta `otro`, *streaming* de tokens) | `09_langgraph_estado_y_grafos` |
 
-### Sesión 6 · Módulos 6 y 7: Multiagente y memoria
+### Bloque 6 · Módulos 6 y 7: Multiagente y memoria
 
 **Notebooks:** [`10_patrones_multiagente`](10_patrones_multiagente.ipynb), [`11_memoria_de_largo_plazo`](11_memoria_de_largo_plazo.ipynb), [`12_deep_agents`](12_deep_agents.ipynb).
 
-**Descripción:** En esta sesión se comparará un supervisor con especialistas contra un solo agente, se agregará memoria por usuario y se presentarán los agentes profundos.
+**Descripción:** En este bloque se comparará un supervisor con especialistas contra un solo agente, se agregará memoria por usuario y se presentarán los agentes profundos.
 
 **Objetivo:** Decidir **con datos** cuándo usar varios agentes, memoria o un agente profundo.
 
@@ -158,7 +158,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 10 | Patrones multiagente | `10_patrones_multiagente` |
 | 25 | Supervisor vs. un solo agente; ejercicio 2 | `10_patrones_multiagente` |
@@ -167,11 +167,11 @@ Al terminar, el participante podrá:
 | 40 | Agente profundo de análisis de políticas, *harness*, *skills* y caso de diseño | `12_deep_agents` |
 | 5 | Holgura y cierre | — |
 
-### Sesión 7 · Módulos 8 y 9: Evaluación y seguridad
+### Bloque 7 · Módulos 8 y 9: Evaluación y seguridad
 
 **Notebooks:** [`13_evaluacion_y_observabilidad`](13_evaluacion_y_observabilidad.ipynb), [`14_seguridad_costos_y_despliegue`](14_seguridad_costos_y_despliegue.ipynb).
 
-**Descripción:** En esta sesión se medirá el agente con un conjunto de prueba, se controlarán regresiones y se demostrará una inyección indirecta con sus defensas.
+**Descripción:** En este bloque se medirá el agente con un conjunto de prueba, se controlarán regresiones y se demostrará una inyección indirecta con sus defensas.
 
 **Objetivo:** Demostrar **con datos** que el agente funciona y resistir ataques comunes.
 
@@ -183,7 +183,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 15 | ¿Qué se evalúa?; conjunto de prueba y evaluadores | `13_evaluacion_y_observabilidad` |
 | 30 | Ejercicio 1: corregir el peor caso sin regresiones | `13_evaluacion_y_observabilidad` |
@@ -191,11 +191,11 @@ Al terminar, el participante podrá:
 | 20 | El experimento en *LangSmith* | `13_evaluacion_y_observabilidad` |
 | 35 | Inyección indirecta, permisos y *sandboxes*, y ejercicio 1 (defender el agente) | `14_seguridad_costos_y_despliegue` |
 
-### Sesión 8 · Módulos 9 y 10: Costos, despliegue y demo final
+### Bloque 8 · Módulos 9 y 10: Costos, despliegue y demo final
 
 **Notebooks:** [`14_seguridad_costos_y_despliegue`](14_seguridad_costos_y_despliegue.ipynb), [`15_demo_final_integradora`](15_demo_final_integradora.ipynb).
 
-**Descripción:** En esta sesión se estimarán costos, se revisarán las opciones de despliegue y la lista de verificación, y el instructor presentará el sistema completo.
+**Descripción:** En este bloque se estimarán costos, se revisarán las opciones de despliegue y la lista de verificación, y el instructor presentará el sistema completo.
 
 **Objetivo:** Tener criterios para decir **"esto ya puede salir a producción"**.
 
@@ -206,7 +206,7 @@ Al terminar, el participante podrá:
 
 **Agenda (120 min):**
 
-| Min | Bloque | Notebook |
+| Min | Actividad | Notebook |
 |---|---|---|
 | 15 | Costos y ejercicio 2 (costo mensual) | `14_seguridad_costos_y_despliegue` |
 | 10 | Opciones de despliegue | `14_seguridad_costos_y_despliegue` |
@@ -234,15 +234,12 @@ Al terminar, el participante podrá:
 - Recordar a los alumnos que traigan una cuenta de GitHub y una de Google con acceso a *Google AI Studio*: las claves se crean en clase con [`00_claves_de_api_y_secretos.ipynb`](00_claves_de_api_y_secretos.ipynb). Compartir el enlace como opcional para quien quiera adelantarse.
 - Tener lista una clave de respaldo para quien no pueda crear la suya en clase.
 - Codespace creado desde `main` y dependencias instaladas (`postCreateCommand`).
-- Los *notebooks* de la sesión y sus versiones en `soluciones/` corren de principio a fin con una clave real (workflow `notebooks-smoke.yml` en verde, con los secretos del repositorio configurados).
+- Los *notebooks* del bloque y sus versiones en `soluciones/` corren de principio a fin con una clave real (workflow `notebooks-smoke.yml` en verde, con los secretos del repositorio configurados).
 - Una clave de respaldo del instructor por si un alumno no puede usar la suya.
-- Material de la sesión publicado.
 
-## Checklist de cierre de sesión
+## Checklist de cierre de bloque
 
-- Se cubrieron los objetivos de la sesión.
-- Asistencia registrada.
-- Grabación y práctica publicadas.
+- Se cubrieron los objetivos del bloque.
 - Dudas frecuentes registradas para mejorar los *notebooks*.
 
 ## Riesgos comunes y mitigación
@@ -252,5 +249,5 @@ Al terminar, el participante podrá:
 - **Respuestas distintas a las del instructor:** es normal; se discute el comportamiento (herramientas, orden, argumentos), no el texto exacto.
 - **`asyncio.run()` en *Jupyter*:** falla porque ya hay un *event loop*; usar `await` directamente en la celda.
 - **Cambios del ecosistema:** las versiones están fijadas en `requirements.txt`; no actualizar durante una edición. Revisar notas de versión de *LangChain*, *LangGraph* y `deepagents` antes de cada edición.
-- **Tickets acumulados entre sesiones:** borrar `data/tickets.db` para empezar de cero; el servidor la recrea.
+- **Tickets acumulados entre bloques:** borrar `data/tickets.db` para empezar de cero; el servidor la recrea.
 - **Tiempo insuficiente:** priorizar los laboratorios y dejar los retos como práctica.
