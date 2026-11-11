@@ -44,7 +44,7 @@ Un curso de **8 sesiones en vivo de 2 horas** (16 horas) sobre *notebooks* de *J
 
 ### 🤖 Modelo del curso: Gemini
 
-**En este curso se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.5-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos y probados con esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
+**En este curso se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.8-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos y probados con esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
 
 El código **no depende de Gemini**: *LangChain* usa la misma interfaz para cualquier proveedor y basta cambiar la cadena `"proveedor:modelo"` (el *notebook* `03` lo demuestra con *OpenAI* y *Anthropic*). Usamos un solo modelo para que todo el grupo vea el mismo comportamiento y compare resultados en igualdad de condiciones. Para cambiarlo en todo el curso, define las variables de entorno `MODELO` y `EMBEDDINGS`.
 

@@ -8,7 +8,7 @@ Los *notebooks* se numeran por tema, en orden, a lo largo de todo el curso; cada
 
 Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`, `DATA`, `POLITICAS`, `MODELO`, `EMBEDDINGS` y verificación de la clave) y, cuando necesita herramientas de un *notebook* anterior, las vuelve a definir. Los temas con ejercicios tienen su versión resuelta en `soluciones/NN_tema_soluciones.ipynb`; `00`, `01` y `15` no tienen ejercicios ni soluciones. `00_claves_de_api_y_secretos.ipynb` se resuelve en la **primera parte de la sesión 1**, guiado por el instructor.
 
-**Modelo del curso:** *Gemini* (`google_genai:gemini-3.5-flash` y `google_genai:gemini-embedding-001`). Todo el material está probado con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en la sesión 1: el código es portable, pero en clase todos usan *Gemini*.
+**Modelo del curso:** *Gemini* (`google_genai:gemini-3.8-flash` y `google_genai:gemini-embedding-001`). Antes de cada edición, el material se ensaya con esa configuración; otros proveedores solo aparecen en los ejercicios de comparación de `03` y `13`. Dilo explícitamente en la sesión 1: el código es portable, pero en clase todos usan *Gemini*.
 
 **Hilo conductor:** el asistente de soporte interno de *Andina Logística* (empresa ficticia). Las políticas están en `data/politicas/` y el servidor MCP de tickets en `mcp_servers/tickets_server.py`.
 
@@ -248,7 +248,7 @@ Al terminar, el participante podrá:
 ## Riesgos comunes y mitigación
 
 - **Claves que no aparecen en el *Codespace*:** el secreto no tiene acceso al repositorio (o al *fork* del alumno) o el *Codespace* se inició antes de crearlo. Ver la sección 7 de `00_claves_de_api_y_secretos.ipynb`.
-- **Límites de la API (cuota o tasa):** las celdas están pensadas para pocas ejecuciones; usar un modelo pequeño (`MODELO=google_genai:gemini-3.5-flash`) y la clave de respaldo.
+- **Límites de la API (cuota o tasa):** las celdas están pensadas para pocas ejecuciones; usar un modelo ligero (`MODELO=google_genai:gemini-3.5-flash-lite`) y la clave de respaldo.
 - **Respuestas distintas a las del instructor:** es normal; se discute el comportamiento (herramientas, orden, argumentos), no el texto exacto.
 - **`asyncio.run()` en *Jupyter*:** falla porque ya hay un *event loop*; usar `await` directamente en la celda.
 - **Cambios del ecosistema:** las versiones están fijadas en `requirements.txt`; no actualizar durante una edición. Revisar notas de versión de *LangChain*, *LangGraph* y `deepagents` antes de cada edición.
