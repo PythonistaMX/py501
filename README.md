@@ -65,16 +65,16 @@ El taller consta de **8 bloques de 2 horas**, divididos en 10 módulos. Los *not
 
 | Módulo | Temas | Notebooks |
 | :--- | :--- | :--- |
-| 1. Fundamentos | Claves de API de *Gemini* y *LangSmith* como secretos de *Codespaces*; qué es un agente, ciclo de razonar-actuar-observar, autonomía, patrones y modos de falla | `00`-`02` |
-| 2. Ecosistema *LangChain* v1 | Paquetes, modelos intercambiables, bloques de contenido, salida estructurada, `create_agent` | `03`-`04` |
-| 3. Herramientas, contexto y RAG | Ingeniería de contexto, diseño de herramientas, fragmentación, *embeddings*, reordenamiento | `05`-`06` |
-| 4. MCP | Clientes y servidores MCP, riesgos, comunicación entre agentes (A2A) | `07` |
-| 5. *Middleware* | Aprobación humana, datos personales, límites, *middleware* propio | `08` |
-| 6. *LangGraph* | Estado, reductores, *checkpointers*, interrupciones, ejecución durable, supervisor y especialistas | `09`-`10` |
-| 7. Memoria y *Deep Agents* | Memoria de corto y largo plazo, *store*, planificación, archivos, subagentes, *harness*, permisos y *sandboxes*, `AGENTS.md` y *skills* | `11`-`12` |
-| 8. Evaluación y observabilidad | Conjuntos de prueba, respuesta y trayectoria, LLM como juez, experimentos en *LangSmith* | `13` |
-| 9. Seguridad, costos y despliegue | Inyección directa e indirecta, costo por conversación, despliegue como servicio, lista de verificación | `14` |
-| 10. Demo final | El sistema completo integrado | `15` |
+| 1. Fundamentos | Claves de API de *Gemini* y *LangSmith* como secretos de *Codespaces*; qué es un agente, ciclo de razonar-actuar-observar, autonomía, patrones y modos de falla | «Claves de API y secretos de *GitHub Codespaces*»<br>«Bienvenida, reglas del taller y entorno de trabajo»<br>«¿Qué es un agente? El ciclo, la autonomía y los modos de falla» |
+| 2. Ecosistema *LangChain* v1 | Paquetes, modelos intercambiables, bloques de contenido, salida estructurada, `create_agent` | «El ecosistema *LangChain* v1: paquetes, modelos y salida estructurada»<br>«Laboratorio: primer agente con `create_agent`» |
+| 3. Herramientas, contexto y RAG | Ingeniería de contexto, diseño de herramientas, fragmentación, *embeddings*, reordenamiento | «Diseño de herramientas e ingeniería de contexto»<br>«Laboratorio: RAG como herramienta» |
+| 4. MCP | Clientes y servidores MCP, riesgos, comunicación entre agentes (A2A) | «*Model Context Protocol* (MCP) y comunicación entre agentes» |
+| 5. *Middleware* | Aprobación humana, datos personales, límites, *middleware* propio | «*Middleware*: controlar el ciclo del agente» |
+| 6. *LangGraph* | Estado, reductores, *checkpointers*, interrupciones, ejecución durable, supervisor y especialistas | «*LangGraph*: estado, grafos y ejecución durable»<br>«Patrones multiagente: supervisor, traspaso y comparación» |
+| 7. Memoria y *Deep Agents* | Memoria de corto y largo plazo, *store*, planificación, archivos, subagentes, *harness*, permisos y *sandboxes*, `AGENTS.md` y *skills* | «Memoria de corto y largo plazo»<br>«*Deep Agents*: planificación, archivos y subagentes» |
+| 8. Evaluación y observabilidad | Conjuntos de prueba, respuesta y trayectoria, LLM como juez, experimentos en *LangSmith* | «Evaluación y observabilidad de agentes» |
+| 9. Seguridad, costos y despliegue | Inyección directa e indirecta, costo por conversación, despliegue como servicio, lista de verificación | «Seguridad, costos y despliegue» |
+| 10. Demo final | El sistema completo integrado | «Demo final: el asistente de soporte de punta a punta» |
 
 ### Cómo funciona el material
 
