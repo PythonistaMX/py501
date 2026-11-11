@@ -69,10 +69,12 @@ El taller consta de **8 bloques de 2 horas**, divididos en 10 módulos. Los *not
 | 9. Seguridad, costos y despliegue | Inyección directa e indirecta, costo por conversación, despliegue como servicio, lista de verificación | `14` |
 | 10. Demo final | El sistema completo integrado | `15` |
 
-### Práctica
+### Cómo funciona el material
 
-* Los *notebooks* `02` a `14` tienen **ejercicios básicos** y **retos opcionales**; se trabajan en clase y como práctica.
-* `15_demo_final_integradora.ipynb` es la demo del instructor y la referencia para construir tu propio agente.
+* **Piezas:** *notebooks* del alumno (la fuente de la verdad del taller), sus versiones resueltas en `soluciones/`, los datos del caso ficticio en `data/`, el servidor MCP en `mcp_servers/` y la guía del instructor (`INSTRUCTOR_GUIDE.md`).
+* **Ejercicios:** los *notebooks* `02` a `14` tienen **ejercicios básicos** y **retos opcionales**; se trabajan en clase y como práctica. `00` y `01` no tienen ejercicios porque preparan el entorno (claves y verificación), y `15` tampoco, porque es la demo del instructor y la referencia para construir tu propio agente.
+* **Bloques y *notebooks*:** cada bloque de 2 horas abarca uno o varios *notebooks*, en orden; la guía del instructor detalla la agenda de cada bloque.
+* **Versión:** cada edición del taller corresponde a una etiqueta (*tag*) de este repositorio; usa la etiqueta que te indique el instructor para tener exactamente el mismo material.
 
 ### 📚 Contenidos
 
