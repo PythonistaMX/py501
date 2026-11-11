@@ -30,7 +30,7 @@ Py501 abre la serie de IA Generativa, Agentes y AIOps:
 | :--- | :--- | :--- |
 | **Py501** | Aplicaciones Agénticas con LangChain | ✅ Este taller |
 | Py511 | RAG avanzado | Próximamente |
-| Py521 | IA Generativa en Entornos Locales | Próximamente |
+| Py521 | [IA Generativa en Entornos Locales](https://github.com/PythonistaMX/py521) | Próximamente |
 | Py531 | Evaluación y xAI | Próximamente |
 | Py541 | AIOps | Próximamente |
 | Py551 | Análisis de Redes | Próximamente |
