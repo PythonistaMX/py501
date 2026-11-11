@@ -15,6 +15,8 @@ langchain-anthropic==1.7.10
 # MCP
 langchain-mcp-adapters==0.3.2
 mcp==1.30.0
+# Despliegue local (langgraph dev) para la sección 3 de 14_seguridad_costos_y_despliegue
+langgraph-cli[inmem]==0.4.42
 # Deep Agents (antes de la 1.0: puede romper compatibilidad entre versiones menores)
 deepagents==0.7.34
 # Cálculo numérico (búsqueda vectorial en memoria)

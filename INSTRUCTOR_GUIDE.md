@@ -179,7 +179,7 @@ Al terminar, el participante podrá:
 1. Construir un conjunto de prueba con casos típicos, límite y adversarios.
 2. Evaluar respuesta final y trayectoria, y usar un LLM como juez.
 3. Ejecutar y comparar experimentos en *LangSmith*.
-4. Aplicar defensa en profundidad contra la inyección indirecta.
+4. Aplicar defensa en profundidad contra la inyección directa e indirecta.
 
 **Agenda (120 min):**
 
@@ -189,7 +189,7 @@ Al terminar, el participante podrá:
 | 30 | Ejercicio 1: corregir el peor caso sin regresiones | `13_evaluacion_y_observabilidad` |
 | 20 | LLM como juez (ejercicio 2) | `13_evaluacion_y_observabilidad` |
 | 20 | El experimento en *LangSmith* | `13_evaluacion_y_observabilidad` |
-| 35 | Inyección indirecta, permisos y *sandboxes*, y ejercicio 1 (defender el agente) | `14_seguridad_costos_y_despliegue` |
+| 35 | Inyección directa e indirecta, defensas y ejercicio 1 (defender el agente); permisos y *sandboxes* se vieron en `12_deep_agents` | `14_seguridad_costos_y_despliegue` |
 
 ### Bloque 8 · Módulos 9 y 10: Costos, despliegue y demo final
 
@@ -201,7 +201,7 @@ Al terminar, el participante podrá:
 
 Al terminar, el participante podrá:
 1. Estimar el costo por conversación y proponer cambios de diseño que lo reduzcan.
-2. Elegir entre *LangGraph* Platform, contenedor propio o *runtimes* de nube.
+2. Servir el agente con `langgraph dev` y elegir entre *LangSmith Deployment*, contenedor propio o *runtimes* de nube.
 3. Aplicar la lista de verificación de 20 puntos a su propio agente.
 
 **Agenda (120 min):**

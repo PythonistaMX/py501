@@ -64,9 +64,9 @@ El taller consta de **8 bloques de 2 horas**, divididos en 10 módulos. Los *not
 | 4. MCP | Clientes y servidores MCP, riesgos, comunicación entre agentes (A2A) | `07` |
 | 5. *Middleware* | Aprobación humana, datos personales, límites, *middleware* propio | `08` |
 | 6. *LangGraph* | Estado, reductores, *checkpointers*, interrupciones, ejecución durable, supervisor y especialistas | `09`-`10` |
-| 7. Memoria y *Deep Agents* | Memoria de corto y largo plazo, *store*, planificación, archivos, subagentes, *harness*, `AGENTS.md` y *skills* | `11`-`12` |
+| 7. Memoria y *Deep Agents* | Memoria de corto y largo plazo, *store*, planificación, archivos, subagentes, *harness*, permisos y *sandboxes*, `AGENTS.md` y *skills* | `11`-`12` |
 | 8. Evaluación y observabilidad | Conjuntos de prueba, respuesta y trayectoria, LLM como juez, experimentos en *LangSmith* | `13` |
-| 9. Seguridad, costos y despliegue | Inyección indirecta, permisos y *sandboxes*, costo por conversación, opciones de despliegue, lista de verificación | `14` |
+| 9. Seguridad, costos y despliegue | Inyección directa e indirecta, costo por conversación, despliegue como servicio, lista de verificación | `14` |
 | 10. Demo final | El sistema completo integrado | `15` |
 
 ### Práctica
@@ -119,13 +119,13 @@ El taller consta de **8 bloques de 2 horas**, divididos en 10 módulos. Los *not
 
 #### 🔹 Módulo 7: Memoria y *Deep Agents*
 * `11` - Memoria de corto y largo plazo; *store* por usuario con `ToolRuntime`; olvidar; memoria semántica.
-* `12` - `create_deep_agent`: lista de tareas, sistema de archivos virtual y subagentes; cuándo usar cada nivel de abstracción; qué es un *harness*; instrucciones con `AGENTS.md` y *skills* con revelación progresiva.
+* `12` - `create_deep_agent`: lista de tareas, sistema de archivos virtual y subagentes; cuándo usar cada nivel de abstracción; qué es un *harness*; `execute` y *sandboxes*; instrucciones con `AGENTS.md` y *skills* con revelación progresiva; riesgo de *skills* de terceros y permisos de archivos.
 
 #### 🔹 Módulo 8: Evaluación y observabilidad
 * `13` - Conjunto de 15 casos típicos, límite y adversarios; evaluación de respuesta y trayectoria; regresiones; LLM como juez; experimentos en *LangSmith*.
 
 #### 🔹 Módulo 9: Seguridad, costos y despliegue
-* `14` - Inyección indirecta y defensa en profundidad; permisos de archivos y *sandboxes*; costo por conversación; *LangGraph* Platform, contenedor propio y *runtimes* de nube; lista de verificación de 20 puntos.
+* `14` - Inyección directa e indirecta y defensa en profundidad; costo por conversación; despliegue como servicio con *LangSmith Deployment* (`langgraph dev`), contenedor propio y *runtimes* de nube; lista de verificación de 20 puntos.
 
 #### 🔹 Módulo 10: Demo final
 * `15` - Sistema completo: RAG, MCP, grafo con clasificador, *middleware*, memoria por usuario y prueba de regresión.
