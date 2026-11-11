@@ -1,5 +1,7 @@
 """Servidor MCP simulado de tickets de soporte (laboratorio del módulo 4).
 
+Expone herramientas (tickets), recursos (políticas) y un prompt (redactar_ticket).
+
 Guarda los tickets en SQLite para que persistan entre llamadas: el cliente
 MCP puede abrir una sesión nueva para cada llamada a una herramienta.
 
@@ -96,6 +98,33 @@ def cerrar_ticket(id_ticket: int) -> dict:
         if cur.rowcount == 0:
             return {"error": f"No existe el ticket {id_ticket}."}
         return {"id": id_ticket, "estado": "cerrado"}
+
+
+RUTA_POLITICAS = Path(__file__).resolve().parent.parent / "data" / "politicas"
+
+
+@mcp.resource("politicas://indice")
+def indice_politicas() -> str:
+    """Lista los nombres de las políticas internas disponibles."""
+    return "\n".join(sorted(p.stem for p in RUTA_POLITICAS.glob("*.md")))
+
+
+@mcp.resource("politicas://{nombre}")
+def politica(nombre: str) -> str:
+    """Devuelve el texto de una política interna."""
+    ruta = RUTA_POLITICAS / f"{nombre}.md"
+    if not ruta.is_file():
+        return f"No existe la política '{nombre}'."
+    return ruta.read_text(encoding="utf-8")
+
+
+@mcp.prompt()
+def redactar_ticket(problema: str) -> str:
+    """Plantilla para redactar un ticket de soporte claro."""
+    return (
+        "Redacta un ticket de soporte con título breve, descripción, categoría y prioridad "
+        f"para este problema: {problema}"
+    )
 
 
 if __name__ == "__main__":
