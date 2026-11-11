@@ -44,7 +44,7 @@ Un taller de **8 bloques de 2 horas** sobre *notebooks* de *Jupyter* que corren 
 
 ### 🤖 Modelo del taller: Gemini
 
-**En este taller se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.8-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos y probados con esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
+**En este taller se usa *Gemini* de Google** como modelo por defecto (`google_genai:gemini-3.8-flash`) y para *embeddings* (`google_genai:gemini-embedding-001`). Todos los ejemplos, ejercicios y soluciones están escritos para esa configuración, y la única clave obligatoria es `GOOGLE_API_KEY`.
 
 El código **no depende de Gemini**: *LangChain* usa la misma interfaz para cualquier proveedor y basta cambiar la cadena `"proveedor:modelo"` (el *notebook* `03` lo demuestra con *OpenAI* y *Anthropic*). Usamos un solo modelo para que todo el grupo vea el mismo comportamiento y compare resultados en igualdad de condiciones. Para cambiarlo en todo el taller, define las variables de entorno `MODELO` y `EMBEDDINGS`.
 
@@ -97,7 +97,7 @@ El taller consta de **8 bloques de 2 horas**, divididos en 10 módulos. Los *not
 #### 🔹 Módulo 1: Fundamentos de sistemas agénticos
 * `00` - Claves de API: qué es un secreto, el modelo del taller (*Gemini*), obtener las claves de *Gemini* y *LangSmith*, guardarlas como secretos de *Codespaces*, verificarlas sin mostrarlas, auditar que no haya claves en el repositorio, errores comunes, fugas, ejecución local y secretos de GitHub Actions.
 * `01` - Bienvenida, reglas del taller, modelo del taller (*Gemini*), claves de API como secretos de *Codespaces* y verificación del entorno.
-* `02` - Qué es un agente; el ciclo de razonar, actuar y observar construido a mano; niveles de autonomía; patrones (ReAct, planificar y ejecutar, reflexión, orquestador); modos de falla.
+* `02` - Qué es un agente; el ciclo de razonar, actuar y observar construido a mano; niveles de autonomía; patrones (ReAct, planificar y ejecutar, reflexión, supervisor y trabajadores); modos de falla.
 
 #### 🔹 Módulo 2: El ecosistema *LangChain* v1
 * `03` - Mapa de paquetes; `init_chat_model` con `"proveedor:modelo"`; `content_blocks` y `usage_metadata`; comparación de modelos; salida estructurada con *Pydantic*; procesamiento en lote.
