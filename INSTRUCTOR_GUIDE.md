@@ -16,7 +16,7 @@ Cada *notebook* es independiente: tiene su propia celda de preparación (`RAIZ`,
 
 ## Objetivos y agenda por bloque
 
-Los ejercicios que no alcancen a resolverse en clase quedan como práctica; los retos son siempre opcionales.
+Los ejercicios que no alcancen a resolverse en clase quedan como práctica; los retos son siempre opcionales. Los minutos de cada agenda son estimaciones: se ajustan después del ensayo.
 
 ### Bloque 1 · Módulos 1 y 2: Fundamentos y ecosistema
 
@@ -30,7 +30,8 @@ Al terminar, el participante podrá:
 1. Explicar el ciclo de razonar, actuar y observar, y los niveles de autonomía.
 2. Reconocer los patrones ReAct, planificar y ejecutar, reflexión y supervisor y trabajadores.
 3. Identificar los modos de falla de un agente y su defensa.
-4. Inicializar modelos de cualquier proveedor con `init_chat_model` y obtener salida estructurada.
+4. Explicar qué es un *LLM*, un *token* y la ventana de contexto, y distinguir modelo, agente y *harness*.
+5. Explicar por qué se usa *LangChain* frente a otras opciones e inicializar modelos de cualquier proveedor con `init_chat_model`.
 
 **Agenda (120 min):**
 
@@ -38,37 +39,41 @@ Al terminar, el participante podrá:
 |---|---|---|
 | 10 | Bienvenida, reglas del taller y modelo del taller (*Gemini*) | `01_bienvenida_y_entorno` |
 | 25 | Claves de *Gemini* y *LangSmith*, secretos de *Codespaces* y verificación (incluye holgura para problemas de claves) | `00_claves_de_api_y_secretos` |
-| 5 | Verificación del entorno: versiones, llamada a *Gemini* y servidor MCP | `01_bienvenida_y_entorno` |
-| 15 | Del modelo al agente; niveles de autonomía | `02_que_es_un_agente` |
-| 25 | El ciclo a mano y ejercicio 1 (pasos y tokens) | `02_que_es_un_agente` |
-| 10 | Patrones, modos de falla y caso de diseño (ejercicio 2) | `02_que_es_un_agente` |
-| 15 | Mapa de paquetes, modelos intercambiables y bloques de contenido | `03_ecosistema_langchain_v1` |
-| 15 | Salida estructurada y ejercicio 1 (el ejercicio 2 queda como práctica) | `03_ecosistema_langchain_v1` |
+| 10 | Verificación del entorno y conceptos básicos del modelo (*LLM*, *token*, mensaje de sistema, ventana de contexto) | `01_bienvenida_y_entorno` |
+| 15 | Del modelo al agente; herramienta; niveles de autonomía | `02_que_es_un_agente` |
+| 25 | El ciclo a mano, modelo, agente y *harness*, y ejercicio 1 (pasos y tokens) | `02_que_es_un_agente` |
+| 5 | Receso | — |
+| 10 | Patrones, modos de falla, permisos mínimos y caso de diseño (ejercicio 2) | `02_que_es_un_agente` |
+| 10 | ¿Por qué *LangChain*? Criterios frente a otras opciones | `03_ecosistema_langchain_v1` |
+| 10 | Mapa de paquetes, modelos intercambiables, temperatura y razonamiento, modelos locales | `03_ecosistema_langchain_v1` |
 
 ### Bloque 2 · Módulos 2 y 3: Primer agente y diseño de herramientas
 
-**Notebooks:** [`04_primer_agente_con_create_agent`](04_primer_agente_con_create_agent.ipynb), [`05_herramientas_y_contexto`](05_herramientas_y_contexto.ipynb).
+**Notebooks:** [`03_ecosistema_langchain_v1`](03_ecosistema_langchain_v1.ipynb) (sección 3), [`04_primer_agente_con_create_agent`](04_primer_agente_con_create_agent.ipynb), [`05_herramientas_y_contexto`](05_herramientas_y_contexto.ipynb).
 
 **Descripción:** En este bloque se construirá el primer agente con `create_agent` y se estudiará cómo el diseño de herramientas y del contexto determina su calidad.
 
 **Objetivo:** Construir un agente funcional y **diagnosticar su comportamiento con trazas**.
 
 Al terminar, el participante podrá:
-1. Escribir herramientas con tipos, *docstrings* y errores útiles.
-2. Crear un agente con `create_agent`, `response_format` y *streaming*.
-3. Leer una traza en *LangSmith* para explicar qué hizo el agente.
-4. Aplicar ingeniería de contexto: qué entra en la ventana y cómo protegerla.
+1. Obtener salida estructurada con `with_structured_output`.
+2. Escribir herramientas con tipos, *docstrings* y errores útiles.
+3. Crear un agente con `create_agent`, `response_format` y *streaming*.
+4. Leer una traza en *LangSmith* para explicar qué hizo el agente.
+5. Aplicar ingeniería de contexto: qué entra en la ventana y cómo protegerla.
 
 **Agenda (120 min):**
 
 | Min | Actividad | Notebook |
 |---|---|---|
+| 15 | Salida estructurada y ejercicio 1 (el ejercicio 2 queda como práctica) | `03_ecosistema_langchain_v1` |
 | 15 | Herramientas y ejercicio 1 (`crear_ticket`) | `04_primer_agente_con_create_agent` |
-| 20 | El agente, su grafo y las trazas | `04_primer_agente_con_create_agent` |
-| 25 | Salida estructurada, *streaming* y ejercicio 2 (*docstring*) | `04_primer_agente_con_create_agent` |
+| 15 | El agente, su grafo y las trazas | `04_primer_agente_con_create_agent` |
+| 20 | Salida estructurada del agente, *streaming* y ejercicio 2 (*docstring*) | `04_primer_agente_con_create_agent` |
+| 5 | Receso | — |
 | 15 | Ingeniería de contexto | `05_herramientas_y_contexto` |
-| 30 | Diseño de herramientas y ejercicios 1 y 2 | `05_herramientas_y_contexto` |
-| 15 | Errores útiles, salidas acotadas y cierre | `05_herramientas_y_contexto` |
+| 25 | Diseño de herramientas y ejercicios 1 y 2 | `05_herramientas_y_contexto` |
+| 10 | Errores útiles, salidas acotadas y cierre | `05_herramientas_y_contexto` |
 
 ### Bloque 3 · Módulos 3 y 4: RAG y MCP
 
@@ -87,12 +92,13 @@ Al terminar, el participante podrá:
 
 | Min | Actividad | Notebook |
 |---|---|---|
-| 15 | Fragmentación e índice vectorial | `06_rag_como_herramienta` |
-| 20 | Búsqueda como herramienta; RAG clásico vs. agéntico | `06_rag_como_herramienta` |
-| 25 | Reordenamiento y ejercicios 1 y 2 | `06_rag_como_herramienta` |
-| 15 | ¿Qué es MCP?; herramientas del servidor de tickets | `07_mcp` |
-| 20 | Agente con políticas + tickets | `07_mcp` |
-| 25 | Servidor propio: ejercicio 1 | `07_mcp` |
+| 15 | Fragmentación, *embeddings* e índice vectorial | `06_rag_como_herramienta` |
+| 15 | Búsqueda como herramienta; RAG clásico vs. agéntico | `06_rag_como_herramienta` |
+| 20 | Reordenamiento y ejercicios 1 y 2 | `06_rag_como_herramienta` |
+| 20 | ¿Qué es MCP?; herramientas, recursos y *prompts* del servidor de tickets | `07_mcp` |
+| 5 | Receso | — |
+| 15 | Agente con políticas + tickets | `07_mcp` |
+| 30 | Servidor propio: ejercicio 1 | `07_mcp` |
 
 ### Bloque 4 · Módulos 4 y 5: Riesgos de MCP y *middleware*
 
@@ -113,10 +119,11 @@ Al terminar, el participante podrá:
 | Min | Actividad | Notebook |
 |---|---|---|
 | 10 | Ejercicio 2 (antigüedad sin preguntar) | `07_mcp` |
-| 20 | Riesgos de MCP, A2A y reto de inyección | `07_mcp` |
+| 20 | Riesgos de MCP, permisos mínimos, A2A y reto de inyección | `07_mcp` |
 | 15 | ¿Qué es el *middleware*?; *middleware* incluido | `08_middleware` |
-| 25 | La pila, la interrupción y la reanudación; ejercicio 1 (`edit`) | `08_middleware` |
-| 35 | *Middleware* propio y ejercicio 2 (aprobar solo lo urgente) | `08_middleware` |
+| 25 | Pausar y reanudar; la pila, la interrupción y la reanudación; ejercicio 1 (`edit`) | `08_middleware` |
+| 5 | Receso | — |
+| 30 | *Middleware* propio y ejercicio 2 (aprobar solo lo urgente); el esquema híbrido queda como reto | `08_middleware` |
 | 15 | Caso de diseño: orden de la pila para mover dinero | `08_middleware` |
 
 ### Bloque 5 · Módulo 6: *LangGraph*
@@ -137,15 +144,16 @@ Al terminar, el participante podrá:
 
 | Min | Actividad | Notebook |
 |---|---|---|
-| 20 | Estado, nodos y aristas con un grafo sin modelos | `09_langgraph_estado_y_grafos` |
+| 20 | Estado, nodos y aristas con un grafo sin modelos; orquestación frente a agente autónomo | `09_langgraph_estado_y_grafos` |
 | 20 | *Checkpointers*, interrupciones y viaje en el tiempo | `09_langgraph_estado_y_grafos` |
 | 30 | El asistente de soporte como grafo | `09_langgraph_estado_y_grafos` |
+| 5 | Receso | — |
 | 15 | Falla y reanudación | `09_langgraph_estado_y_grafos` |
-| 35 | Ejercicios 1 y 2 (ruta `otro`, *streaming* de tokens) | `09_langgraph_estado_y_grafos` |
+| 30 | Ejercicios 1 y 2 (ruta `otro`, *streaming* de tokens) | `09_langgraph_estado_y_grafos` |
 
 ### Bloque 6 · Módulos 6 y 7: Multiagente y memoria
 
-**Notebooks:** [`10_patrones_multiagente`](10_patrones_multiagente.ipynb), [`11_memoria_de_largo_plazo`](11_memoria_de_largo_plazo.ipynb), [`12_deep_agents`](12_deep_agents.ipynb).
+**Notebooks:** [`10_patrones_multiagente`](10_patrones_multiagente.ipynb), [`11_memoria_de_largo_plazo`](11_memoria_de_largo_plazo.ipynb), [`12_deep_agents`](12_deep_agents.ipynb) (secciones 1 a 3).
 
 **Descripción:** En este bloque se comparará un supervisor con especialistas contra un solo agente, se agregará memoria por usuario y se presentarán los agentes profundos.
 
@@ -154,7 +162,7 @@ Al terminar, el participante podrá:
 Al terminar, el participante podrá:
 1. Construir un supervisor con especialistas como herramientas y comparar costo y latencia.
 2. Distinguir memoria de corto y largo plazo e implementar memoria por usuario con `ToolRuntime`.
-3. Usar `create_deep_agent` con lista de tareas, archivos y subagentes, y darle instrucciones con `AGENTS.md` y *skills*.
+3. Usar `create_deep_agent` con lista de tareas, archivos y subagentes, y explicar qué es un *harness* y por qué `LocalShellBackend` no es un *sandbox*.
 
 **Agenda (120 min):**
 
@@ -164,7 +172,8 @@ Al terminar, el participante podrá:
 | 25 | Supervisor vs. un solo agente; ejercicio 2 | `10_patrones_multiagente` |
 | 15 | Tipos de memoria; herramientas con `ToolRuntime` | `11_memoria_de_largo_plazo` |
 | 25 | Memoria por usuario; ejercicios 1 y 2 | `11_memoria_de_largo_plazo` |
-| 40 | Agente profundo de análisis de políticas, *harness*, *skills* y caso de diseño | `12_deep_agents` |
+| 5 | Receso | — |
+| 35 | Agente profundo de análisis de políticas, *harness*, `execute` y *sandbox*, y caso de diseño (ejercicio 2) | `12_deep_agents` |
 | 5 | Holgura y cierre | — |
 
 ### Bloque 7 · Módulos 8 y 9: Evaluación y seguridad
@@ -185,15 +194,16 @@ Al terminar, el participante podrá:
 
 | Min | Actividad | Notebook |
 |---|---|---|
-| 15 | ¿Qué se evalúa?; conjunto de prueba y evaluadores | `13_evaluacion_y_observabilidad` |
-| 30 | Ejercicio 1: corregir el peor caso sin regresiones | `13_evaluacion_y_observabilidad` |
+| 15 | ¿Qué se evalúa?; conjunto de prueba, evaluadores y umbral de aceptación | `13_evaluacion_y_observabilidad` |
+| 25 | Ejercicio 1: corregir el peor caso sin regresiones | `13_evaluacion_y_observabilidad` |
 | 20 | LLM como juez (ejercicio 2) | `13_evaluacion_y_observabilidad` |
 | 20 | El experimento en *LangSmith* | `13_evaluacion_y_observabilidad` |
+| 5 | Receso | — |
 | 35 | Inyección directa e indirecta, defensas y ejercicio 1 (defender el agente); permisos y *sandboxes* se vieron en `12_deep_agents` | `14_seguridad_costos_y_despliegue` |
 
 ### Bloque 8 · Módulos 9 y 10: Costos, despliegue y demo final
 
-**Notebooks:** [`14_seguridad_costos_y_despliegue`](14_seguridad_costos_y_despliegue.ipynb), [`15_demo_final_integradora`](15_demo_final_integradora.ipynb).
+**Notebooks:** [`12_deep_agents`](12_deep_agents.ipynb) (sección 4), [`14_seguridad_costos_y_despliegue`](14_seguridad_costos_y_despliegue.ipynb), [`15_demo_final_integradora`](15_demo_final_integradora.ipynb).
 
 **Descripción:** En este bloque se estimarán costos, se revisarán las opciones de despliegue y la lista de verificación, y el instructor presentará el sistema completo.
 
@@ -203,19 +213,22 @@ Al terminar, el participante podrá:
 1. Estimar el costo por conversación y proponer cambios de diseño que lo reduzcan.
 2. Servir el agente con `langgraph dev` y elegir entre *LangSmith Deployment*, contenedor propio o *runtimes* de nube.
 3. Aplicar la lista de verificación de 20 puntos a su propio agente.
+4. Dar instrucciones permanentes con `AGENTS.md` y *skills*, y revisar las de terceros antes de activarlas.
 
 **Agenda (120 min):**
 
 | Min | Actividad | Notebook |
 |---|---|---|
+| 20 | Instrucciones permanentes (`AGENTS.md`), *skills* y riesgo de *skills* de terceros (sección 4) | `12_deep_agents` |
 | 15 | Costos y ejercicio 2 (costo mensual) | `14_seguridad_costos_y_despliegue` |
-| 10 | Opciones de despliegue | `14_seguridad_costos_y_despliegue` |
+| 15 | Despliegue como servicio: conceptos, `langgraph dev` y llamada con `langgraph_sdk` | `14_seguridad_costos_y_despliegue` |
 | 5 | Lista de verificación para producción | `14_seguridad_costos_y_despliegue` |
-| 10 | Demo: arquitectura y piezas | `15_demo_final_integradora` |
+| 5 | Receso | — |
+| 5 | Demo: arquitectura y piezas | `15_demo_final_integradora` |
 | 20 | Demo: RAG + MCP + *middleware* + memoria | `15_demo_final_integradora` |
 | 15 | Demo: el grafo completo e interrupción anidada | `15_demo_final_integradora` |
-| 15 | Demo: regresión al cambiar de modelo | `15_demo_final_integradora` |
-| 30 | Preguntas y cierre | — |
+| 10 | Demo: regresión al cambiar de modelo | `15_demo_final_integradora` |
+| 10 | Preguntas y cierre | — |
 
 ## Resultados de aprendizaje por módulo
 
@@ -259,4 +272,6 @@ Sin esos secretos, el *workflow* solo valida la estructura y la sintaxis de los 
 - **`asyncio.run()` en *Jupyter*:** falla porque ya hay un *event loop*; usar `await` directamente en la celda.
 - **Cambios del ecosistema:** las versiones están fijadas en `requirements.txt`; no actualizar durante una edición. Revisar notas de versión de *LangChain*, *LangGraph* y `deepagents` antes de cada edición.
 - **Tickets acumulados entre bloques:** borrar `data/tickets.db` para empezar de cero; el servidor la recrea.
+- **`execute` con un modelo real:** solo lo demuestra el instructor, sin contenido externo ni *skills* de terceros. `LocalShellBackend` no aísla: desde su terminal se pueden leer las variables de entorno de otros procesos (incluida la clave) y salir de `root_dir`. Los participantes usan la celda con el modelo falso de `12_deep_agents`.
+- **Tabla de alternativas de `03`:** antes de cada edición, confirmar sus datos en la documentación oficial de cada opción.
 - **Tiempo insuficiente:** priorizar los laboratorios y dejar los retos como práctica.
