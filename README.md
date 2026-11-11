@@ -165,7 +165,6 @@ En resumen: GitHub → **Settings → Codespaces → Codespaces secrets → New 
 El entorno se iniciará automáticamente con:
 * *Python* 3.12
 * Extensiones de *Python* y *Jupyter* para VS Code
-* *Docker* (para el módulo de despliegue)
 * Todas las bibliotecas del taller con versiones fijadas en `requirements.txt`: *LangChain*, *LangGraph*, *LangSmith*, integraciones de *Gemini*, *OpenAI* y *Anthropic*, adaptadores de MCP y *Deep Agents*.
 
 > ⚠️ **ADVERTENCIA: el ecosistema cambia rápido.** El taller usa *LangChain* 1.4 y *LangGraph* 1.2. Los tutoriales anteriores a la versión 1.0 usan `AgentExecutor`, `initialize_agent` o `create_react_agent`, que hoy son código heredado. `deepagents` aún no llega a la versión 1.0 y puede romper compatibilidad entre versiones menores. No actualices `requirements.txt` durante el taller.

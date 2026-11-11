@@ -3,8 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
 
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
   "hostRequirements": {
@@ -30,7 +29,6 @@
   },
 
   "containerEnv": {
-    "LANGSMITH_TRACING": "true",
     "LANGSMITH_PROJECT": "py501"
   },
 
