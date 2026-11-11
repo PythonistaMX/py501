@@ -10,8 +10,5 @@
 - Periodos de más de 10 días hábiles requieren aprobación del director de área.
 - No se aprueban vacaciones durante el cierre contable (últimos 3 días hábiles de cada trimestre) para el área de Finanzas.
 
-## Prima vacacional
-- Se paga el 25% del salario correspondiente a los días de vacaciones, en la nómina previa al periodo.
-
 ## Días no utilizados
 - Se pueden acumular hasta 6 meses después del aniversario. Después se pierden, salvo autorización por escrito de RR. HH.
