@@ -48,7 +48,7 @@ Un taller de **8 bloques de 2 horas** sobre *notebooks* de *Jupyter* que corren 
 
 El código **no depende de Gemini**: *LangChain* usa la misma interfaz para cualquier proveedor y basta cambiar la cadena `"proveedor:modelo"` (el *notebook* `03` lo demuestra con *OpenAI* y *Anthropic*). Usamos un solo modelo para que todo el grupo vea el mismo comportamiento y compare resultados en igualdad de condiciones. Para cambiarlo en todo el taller, define las variables de entorno `MODELO` y `EMBEDDINGS`.
 
-A lo largo del taller se construye un mismo sistema: el **asistente de soporte interno** de *Andina Logística*, una empresa ficticia, que consulta políticas, gestiona tickets por MCP y escala casos a una persona.
+A lo largo del taller se construye un mismo sistema: el **asistente de soporte interno** de *Andina Logística*, una empresa ficticia, que consulta políticas y gestiona tickets por MCP.
 
 ---
 
