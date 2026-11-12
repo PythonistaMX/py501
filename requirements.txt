@@ -1,5 +1,5 @@
 # Entorno del taller py501 "Aplicaciones Agénticas con LangChain" (Python 3.12)
-# Versiones fijadas el 2026-11-07: el ecosistema cambia rápido; no actualizar durante una edición del taller.
+# Versiones fijadas el 2026-11-07 (google-genai y langgraph-cli, el 2026-11-11): el ecosistema cambia rápido; no actualizar durante una edición del taller.
 # Núcleo
 langchain==1.4.9
 langchain-core==1.7.6

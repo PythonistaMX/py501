@@ -112,10 +112,11 @@ def indice_politicas() -> str:
 @mcp.resource("politicas://{nombre}")
 def politica(nombre: str) -> str:
     """Devuelve el texto de una política interna."""
-    ruta = RUTA_POLITICAS / f"{nombre}.md"
-    if not ruta.is_file():
-        return f"No existe la política '{nombre}'."
-    return ruta.read_text(encoding="utf-8")
+    # Permisos mínimos: solo se sirven las políticas del índice; el nombre nunca se usa como ruta libre.
+    disponibles = {p.stem for p in RUTA_POLITICAS.glob("*.md")}
+    if nombre not in disponibles:
+        return f"No existe la política '{nombre}'. Consulta politicas://indice."
+    return (RUTA_POLITICAS / f"{nombre}.md").read_text(encoding="utf-8")
 
 
 @mcp.prompt()
